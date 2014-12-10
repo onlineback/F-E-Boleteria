@@ -42,7 +42,7 @@ block content
 					span TODO
 			<?php if(count($this->categorias)>0){
 			|	foreach ($this->categorias as $key => $value) { ?>
-			li(class!="",style!="color: background: none repeat scroll 0 0 <?php echo $value['codigoColor']; ?>;")
+			li(class!="",style!="background: none repeat scroll 0 0 <?php echo $value['codigoColor']; ?>;")
 				a(href="javascript:;",data-id!="<?php echo $value['id']; ?>")
 					img(src!="<?php echo DINAMIC_URL; ?>/categorias/<?php echo $value['icono']; ?>")
 					br
@@ -51,6 +51,32 @@ block content
 	.clear
 	.contenido-eventos
 		.container-eventos
+			<?php if(count($this->search)>0){
+			|	foreach ($this->search as $key => $value) { ?>
+			.box
+				.ribbon new
+				img(src!="<?php echo DINAMIC_URL ?>/eventos/banner/<?php echo $value['evento_contenido_imagenprincipal']; ?>",class="img-responsive")
+				.subtitulo
+					p(style!="background: none repeat scroll 0 0 <?php echo $value['categoria_color']; ?>;")
+						img(src!="<?php echo DINAMIC_URL ?>/categoria/icono/<?php echo $value['categoria_icono']; ?>" ,class="img-subtitulo")
+						span <?php echo $value['categoria_name']; ?>
+					a(href="javascript:;",class="social-box")
+						i.sprite.icFacebook
+					a(href="javascript:;",class="social-box")
+						i.sprite.icTwitter
+					a(href="javascript:;",class="social-box")
+						i.sprite.icYoutube
+				.clear
+				.contenido-box
+					p
+						strong	<?php echo $value['titulo']; ?>
+					p.espacio-box
+						i.sprite.icCboicon2.icono-fecha
+						span <?php echo date('M d',strtotime($value['evento_contenido_fechainicio'])) .' - '.date('M d',strtotime($value['evento_contenido_fechafin'])); ?>, 8pm onwards
+					p.text-box Aeorem Ipum Dolor Sit Amet Magna Elita. Lorem Ipsum Elitm.Dolor Sit Amet Magna Elitam vestibulumty. MAgna parispatis
+					p
+						a(href="javascript:;",class="comprar-entradas") COMPRAR ENTRADAS
+			<?php }}?>
 			.box
 				.ribbon new
 				img(src!="<?php echo STATIC_URL ?>/img/img-prueba/img1.jpg",class="img-responsive")
