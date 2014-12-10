@@ -1,0 +1,28 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="es"> <![endif]-->
+<!--[if IE 7]>    <html class="lt-ie9 lt-ie8" lang="es"> <![endif]-->
+<!--[if IE 8]>    <html class="lt-ie9" lang="es"> <![endif]-->
+<!--[if gt IE 8]> <html lang="es"> <![endif]-->
+<?php echo $this->render("include/head.phtml"); ?>
+body.general-bg
+	block content
+	<?php echo $this->layout()->content; ?>
+	script(type="text/javascript").
+		var yOSON ={
+			"modulo":"<?php echo $this->moduleName ?>",
+			"controller": "<?php echo $this->controllerName?>",
+			"action": '<?php echo $this->actionName?>',
+			"baseHost": "<?php echo BASE_URL?>",
+			"statHost":"<?php echo STATIC_URL?>/",
+			"eleHost":"<?php echo DINAMIC_URL?>/",
+			"statVers":"?v=#{version}" ,
+			<?php foreach ($this->yosonVars as $key => $value) : 
+				echo '"'.$key.'":'.$value.', '; 
+				endforeach; 
+				echo '"min":"","AppCore":{},"AppSandbox":{},"AppSchema":{"modules":{},"requires":{}'
+			?>
+			}
+		};
+	script(type="text/javascript", src!="<?php echo STATIC_URL ?>/js/vendor/vendor.js?v=#{version}")
+	script(type="text/javascript", src!="<?php echo STATIC_URL ?>/js/library/library.js?v=#{version}")
+	<?php echo $this->headScript(); ?>

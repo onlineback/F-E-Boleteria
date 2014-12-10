@@ -1,0 +1,98 @@
+.box-center
+	.container
+		include layout/include/menu-addads.jade
+		.box-white.frm-addads.frm-addObject
+			.box-frmads
+				span.numCircle 1
+				.form-group.mb20
+					label Informacion del anuncio
+					span.help-block.fix Completa toda la información sobre el anuncio que quieras colocar
+					.upload-ctn.row
+						.upload-box
+							.dotBox
+								span.sprite.icUpPicture
+							img(class="uploaded-img hide", data-numImgs="1")
+							.bgUploader(style="display:none;")
+									span.profile-charge
+					span.help-block.pt8 Solo se permite como máximo 3 imágenes
+			form(id="addObjects",method="POST")
+				.box-frmads.mb30
+					.form-group
+						label.mb12 URL del video
+						<?php echo $this->formRow($this->form->get("urlvideo")); ?>
+						<?php echo $this->formRow($this->form->get("picture")); ?>
+				.row.bxsp-4
+					.column-6
+						.box-frmads.fix
+							span.numCircle 2
+							.form-group
+								<?php echo $this->formRow($this->form->get("title")); ?>
+							.form-group
+								.w100.push-left
+									label.pt9 Tipo:
+								.ctnLbl-block.ctn-optslabel.push-left
+									<?php foreach($this->categories as $key=>$category){ ?>
+									label(class!="decorOpt-label showHidePay <?php if($key==0){ ?>active<?php } ?>").
+										<span class="decorOptRad"><i class="glyph-icon glyph-radio"></i></span>
+										<input type="radio" name="idtype" value="<?php echo $category['id'] ?>" <?php echo ($key==0)?'checked':''; ?> />
+										<?php echo $category['name']; ?>
+										<i class="glyph-icon <?php echo $category['class']; ?> crclIcon"></i>
+									<?php } ?>
+							.form-group
+								<?php echo $this->formRow($this->form->get("description")); ?>
+								span.charLeft
+					.column-6
+						.box-frmads
+							span.numCircle 3
+							div(class="form-group ctnHideShow",data-target="#payopt")
+								label(class="decorOpt-label lnkHideShow active payment",data-visible="true")
+									span.decorOptRad
+										i(class="glyph-icon glyph-radio")
+									input(type="radio",name="flagpay",value="1" , checked)
+									| Pago
+								label(class="decorOpt-label lnkHideShow borrowed",data-visible="false", id="borrowed")
+									span.decorOptRad
+										i(class="glyph-icon glyph-radio")
+									input(type="radio",name="flagpay",value="0")
+									span.texto ¡Te lo presto!
+							#payopt.row.mt24.input-group
+								label(class="input-group-addon fixMoney",for="start") S/.
+								//-.column-8
+									select(class="form-control", name="cboDivisa")
+										option(value="") Seleccione Divisa
+										option(value="1") Soles S/.
+										option(value="2") Dolares $
+									span.help-block Elegir tipo de moneda
+								//-.column-4
+								<?php echo $this->formRow($this->form->get("price")); ?>
+								span.help-block.ml-38 Indicar el monto
+						.box-frmads.pt22.pb20
+							.form-group.ctnHideShow(data-target="#cboCompanies")
+								label.mb12 Privacidad
+								label.decorOpt-label.active.lnkHideShow(data-visible="true")
+									span.decorOptRad
+										i(class="glyph-icon glyph-radio")
+									input(type="radio",name="flagviewgroup", checked, value="1", data-display="multiselect")
+									| Sólo para mi grupo
+								label.decorOpt-label.lnkHideShow(data-visible="false")
+									span.decorOptRad
+										i(class="glyph-icon glyph-radio")
+									input(type="radio",name="flagviewgroup", value="0")
+									| Publico
+							.form-group#cboCompanies.cboCompanies
+								<?php echo $this->formRow($this->form->get("idusercompany")); ?>
+						.box-frmads
+							.form-group
+								label.pb8 Ubicación de recojo
+								.row.pb12
+									select(class="form-control slct-address", name="idaddress")
+										option(value="") Seleccione dirección
+										<?php foreach($this->address as $address){ ?>
+										option(value!="<?php echo $address['id']; ?>") <?php echo $address['name']; ?>
+										<?php } ?>
+									span.help-block.fcRed *Para garantizar su seguridad le recomendamos colocar solo el distrito de recojo
+								.ml200.mt20
+									a(href="javascript:;",title="Agregar/editar lugar",class="btn btnPrimary btn-block addAddress") Agregar/editar dirección
+				.control
+					button(class="btn btn-blue btn-med mt20",type="submit") Publicar
+include template/tplAddObject.jade

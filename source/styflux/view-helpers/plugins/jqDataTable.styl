@@ -1,0 +1,143 @@
+/*
+*	jqDatable
+*/
+table.dataTable
+	border-collapse separate
+	border-spacing 0
+	clear both
+	margin 0 auto
+	width 100%
+	thead th
+		border-bottom: 1px solid #b3b3b3
+		color #0071bc
+		font-family family3
+		font-size 15px
+		font-weight 400
+		padding 6px
+		text-align center
+	thead th:active
+		outline: none
+	tbody tr
+		background-color white
+	tbody tr.selected
+		background-color #b0bed9
+	tbody td
+		color #333
+		font-family family4
+		font-size 12px
+		padding 10px 6px
+		text-align center
+	th.center,td.center,td.dataTables_empty
+		text-align center
+	th.right,td.right
+		text-align right
+	tbody tr.odd
+		background-color: #edf0f0
+	&.no-footer
+		border-bottom: 1px solid #b3b3b3
+table.dataTable,table.dataTable th,table.dataTable td
+	box-sizing content-box
+	word-break break-all
+	word-wrap break-word
+.dataTables_wrapper
+	position: relative;
+	clear: both;
+	*zoom: 1;
+	zoom: 1
+	.dataTables_length
+		float: left
+	.dataTables_filter
+		float: right
+		text-align: right
+	.dataTables_filter input
+		margin-left: 0.5em
+	.dataTables_info
+		clear: both
+		color #000
+		float: left
+		font-family family4
+		font-size 14px
+		padding-top: 0.85em
+	.dataTables_paginate
+		float: right
+		font-size 14px
+		padding-top: 0.8em
+		text-align: right
+	.dataTables_paginate .paginate_button
+		box-sizing border-box
+		display inline-block
+		min-width 1.5em
+		padding 0.5em 1em
+		margin-left 10px
+		text-align center
+		text-decoration none !important
+		cursor pointer
+		font-family family4
+		*cursor hand
+		color #333333
+		&.next, &.previous
+			color #FFF
+			background #F1C944
+	.dataTables_paginate .paginate_button.current, .dataTables_paginate .paginate_button.current:hover
+		background #f1c944
+		color #FFF !important
+	.dataTables_paginate .paginate_button.disabled, .dataTables_paginate .paginate_button.disabled:hover, .dataTables_paginate .paginate_button.disabled:active
+		background #f8e4a1
+		cursor default
+		color #FFF !important
+		box-shadow none
+	.dataTables_paginate .paginate_button:hover
+		background #f1c944
+		color white !important
+	.dataTables_paginate .paginate_button:active
+		outline none
+	.dataTables_processing
+		background url(routImgLoader+"opacity.png")
+		height 100%
+		left 0
+		position absolute
+		top 0
+		width 100%
+		z-index 990
+		span
+			background url(routImgLoader+"loader.gif")
+			height 30px
+			left 50%
+			margin -15px 0 0 -15px
+			position absolute
+			top 50%
+			width 30px
+	.dataTables_length,.dataTables_filter,.dataTables_info,.dataTables_processing,.dataTables_paginate
+		color #333333
+	.dataTables_scroll
+		clear both
+	.dataTables_scroll div.dataTables_scrollBody
+		*margin-top -1px
+		-webkit-overflow-scrolling touch
+	.dataTables_scroll div.dataTables_scrollBody th > div.dataTables_sizing,.dataTables_scroll div.dataTables_scrollBody td > div.dataTables_sizing
+		height 0
+		overflow hidden
+		margin 0 !important
+		padding 0 !important
+	&.no-footer .dataTables_scrollBody
+		border-bottom 1px solid #b3b3b3
+	&.no-footer div.dataTables_scrollHead table,&.no-footer div.dataTables_scrollBody table
+		border-bottom none
+	&:after
+		visibility hidden
+		display block
+		content ""
+		clear both
+		height 0
+@media screen and (max-width: 767px)
+	.dataTables_wrapper .dataTables_info,.dataTables_wrapper .dataTables_paginate
+		float none
+		text-align center
+	.dataTables_wrapper .dataTables_paginate
+		margin-top: 0.5em
+@media screen and (max-width: 640px)
+	.dataTables_wrapper .dataTables_length,	.dataTables_wrapper .dataTables_filter
+		float none
+		text-align center
+	.dataTables_wrapper .dataTables_filter
+		margin-top: 0.5em

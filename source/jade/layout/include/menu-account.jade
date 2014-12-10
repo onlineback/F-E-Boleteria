@@ -1,0 +1,17 @@
+ul.menu-bar
+	li
+		a(href="/mi-cuenta",title="Mi cuenta",class!="<?php echo ($this->controller=='account')?'active':''; ?>")
+			i(class="glyph-icon glyph-account")
+			| Mi cuenta
+	li
+		a(href="/mi-reputacion",title="Mi reputación",class!="<?php echo ($this->controller=='reputation')?'active':''; ?>")
+			i(class="glyph-icon glyph-reputation")
+			| Mi Reputacion
+	li
+		a(href="/mis-listados",title="Mis listados",class!="<?php echo ($this->controller=='listing')?'active':''; ?>")
+			i(class="glyph-icon glyph-ads")
+			| Listados
+	li
+		a(href="/mis-notificaciones",title="Mis notificaciones",class!="<?php echo ($this->controller=='notification')?'active':''; ?>")
+			i(class="glyph-icon glyph-check")
+			| Notificaciones

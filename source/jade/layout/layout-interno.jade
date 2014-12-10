@@ -1,0 +1,26 @@
+include include/vars.jade
+include include/head.jade
+include include/header.jade
+body.general-bg
+	block content 
+	<?php echo $this->layout()->content; ?>
+	script(type="text/javascript").
+		var yOSON ={
+			"modulo":"<?php echo $this->moduleName ?>",
+			"controller": "<?php echo $this->controllerName?>",
+			"action": '<?php echo $this->actionName?>',
+			"baseHost": "<?php echo BASE_URL?>",
+			"statHost":"<?php echo STATIC_URL?>/",
+			"eleHost":"<?php echo DINAMIC_URL?>/",
+			"statVers":"?v=#{version}" ,
+			<?php foreach ($this->yosonVars as $key => $value) : 
+				echo '"'.$key.'":'.$value.', '; 
+				endforeach; 
+				echo '"min":"","AppCore":{},"AppSandbox":{},"AppSchema":{"modules":{},"requires":{}'
+			?>
+			}
+		};
+	include include/footer.jade
+	script(type="text/javascript", src!="<?php echo STATIC_URL ?>/js/vendor/vendor.js?v=#{version}")
+	script(type="text/javascript", src!="<?php echo STATIC_URL ?>/js/library/library.js?v=#{version}")
+	<?php echo $this->headScript(); ?>

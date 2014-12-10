@@ -1,0 +1,20 @@
+include include/vars.jade
+include include/head.jade
+body.login-bg
+	block content
+	script(type="text/javascript").
+		var yOSON ={
+			"modulo":"application",
+			"controller": "index",
+			"action": '#{actionJade}',
+			"baseHost": "/",
+			"statHost":"/",
+			"eleHost":"/",
+			"statVers":"?v=#{version}" ,
+			"min": "",
+			"AppCore": {},
+			"AppSandbox": {},
+			"AppSchema" :{"modules":{},"requires":{}}
+		};
+	script(type="text/javascript", src="/js/vendor/vendor.js?v=#{version}")
+	script(type="text/javascript", src="/js/library/library.js?v=#{version}")

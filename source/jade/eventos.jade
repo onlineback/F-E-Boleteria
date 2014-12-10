@@ -1,0 +1,88 @@
+block content
+    .imagen-principal
+        img(src!="<?php echo STATIC_URL ?>/img/img-prueba/fondo-evento.jpg")
+    .fondo-evento
+        .container-evento
+            .detalle-evento
+                h2.page-title Sample Tittle Venue Name
+                p Level1/ level 2 / Level 3 / level 4
+                img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg")
+                img(src!="<?php echo STATIC_URL ?>/img/img-prueba/sombra.png",class="sombra")
+                p.redes-evento redes
+                .lista-evento
+                    ul
+                        li
+                            i.sprite.icCategoria
+                            span Category:
+                        li
+                            i.sprite.icDate
+                            span Release Date
+                        li
+                            i.sprite.icDuracion
+                            span Duration:
+                        li
+                            i.sprite.icAge(style="left:-2px;")
+                            span Age restriction:
+                .lista-info-evento
+                    ul
+                        li  Drama, Comedy
+                        li  August 30,2014
+                        li  1 hour and 30 mins
+                        li  13 +
+                .clear
+
+                #mapa
+                p.contenido-extra Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                p.ver-venue
+                    a(href="javascript:;" , class="btn-evenue")
+                        img(src!="<?php echo STATIC_URL ?>/img/btn-venue.png")
+            .extra-evento
+                #tabs
+                    ul
+                        li
+                            a(href="#tabs-1" ) The show
+                        li
+                            a(href="#tabs-2" ) Author
+                        li
+                            a(href="#tabs-3" ) Director
+                        .clear
+                    #tabs_container
+                        #tabs-1
+                            p Proin elit arcu, rutrum commodo, vehicula tempus, commodo a, risus. Curabitur nec arcu. Donec sollicitudin mi sit amet mauris. Nam elementum quam ullamcorper ante. Etiam aliquet massa et lorem. Mauris dapibus lacus auctor risus.
+                            p enean tempor ullamcorper leo. Vivamus sed magna quis ligula eleifend adipiscing. Duis orci. Aliquam sodales tortor vitae ipsum. Aliquam nulla. Duis aliquam molestie erat. Ut et mauris vel pede varius sollicitudin. Sed ut dolor nec orci tincidunt interdum. Phasellus ipsum. Nunc tristique tempus lectus.
+                        #tabs-2
+                            p Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Duis scelerisque molestie turpis. Sed fringilla, massa eget luctus malesuada, metus eros molestie lectus, ut tempus eros massa ut dolor.
+                        #tabs-3
+                            p Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem.
+                .botones-eventos
+                    a(href="#tabs-1" ,class="btnselect") Select  Best Available Seats
+                    a(href="#tabs-1" ,class="btnticket") Buy Tickets
+                .slider-imagenes.row
+                    .slider-imagen
+                        img(src!="<?php echo STATIC_URL ?>/img/img-prueba/slide1.jpg")
+                    .miniaturas
+                        img(src!="<?php echo STATIC_URL ?>/img/img-prueba/thumb1.jpg")
+                        img(src!="<?php echo STATIC_URL ?>/img/img-prueba/thumb2.jpg")
+                        img(src!="<?php echo STATIC_URL ?>/img/img-prueba/thumb3.jpg")
+                        img(src!="<?php echo STATIC_URL ?>/img/img-prueba/thumb4.jpg")
+                        img(src!="<?php echo STATIC_URL ?>/img/img-prueba/thumb5.jpg",class="nomargin")
+                .videos.row
+                    .video-principal
+                        img(src!="<?php echo STATIC_URL ?>/img/img-prueba/video1.jpg")
+                    .miniaturas
+                        img(src!="<?php echo STATIC_URL ?>/img/img-prueba/thumb1.jpg")
+                        img(src!="<?php echo STATIC_URL ?>/img/img-prueba/thumb2.jpg")
+                        img(src!="<?php echo STATIC_URL ?>/img/img-prueba/thumb3.jpg")
+                        img(src!="<?php echo STATIC_URL ?>/img/img-prueba/thumb4.jpg")
+                        img(src!="<?php echo STATIC_URL ?>/img/img-prueba/thumb5.jpg",class="nomargin")
+            .clear
+            .pasarela
+                img(src!="<?php echo STATIC_URL ?>/img/pasarela.png")
+                a(href="#tabs-1" ,class="btnticket mini-btn") Buy Tickets
+                a(href="#tabs-1" ,class="btnselect") Select  Best Available Seats
+                form
+                    input(type="text",name="evento-suscribir", id="evento-suscribir",placeholder="Enter Your Email")
+                    button Subscribe
+
+            .clear
+    .clear

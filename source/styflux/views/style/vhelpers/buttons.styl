@@ -1,0 +1,88 @@
+/**
+* Buttons Section
+* @class Buttons
+* @module buttons.css
+*/
+.btn
+	border-radius 4px
+	box-sizing border-box
+	display inline-block
+	*display inline
+	font-family family4
+	font-size 18px
+	line-height 20px
+	padding 7px 45px
+	vertical-align top
+	*zoom 1
+	.glyph-icon
+		margin-right 5px
+	& + .btn
+		margin-left 12px
+.btnPrimary
+	backgroundLighten(#00bcba,10%)
+	color #FFF
+.btnYellow
+	backgroundLighten(color1,10%)
+	color #000
+	font-family family1
+	line-height 30px
+	border-radius 0
+	padding 6px 10px 6px 18px
+	.glyph-icon
+		 width 30px
+		 height 30px
+		 line-height 33px
+		 margin-left 10px
+		 background #000
+		 color color1
+		 border-radius 25px
+.btnTransparent
+	border 1px solid #FFF
+	font-family family4
+/*
+* Utils Buttons
+*/
+.btn-block
+	display block
+	text-align center
+	width 100%
+.btn-blue
+	background #2ea4c3
+	color #fff
+	border 1px solid #2ea4c3
+	text-align center
+	font-size 13px
+	&.active
+		background #fff
+		color #2ea4c3
+	&:hover
+		opacity .8
+.btn-red
+	background #ff2478
+	color #fff
+	border 1px solid #ff2478
+	&:hover
+		opacity .8
+.btn-green
+	background #00bcba
+	color #fff
+	border 1px solid #00bcba
+	&:hover
+		opacity .8
+.btn-white
+	background #fff
+	color #2383ec
+	border 1px solid #2383ec
+	&:hover
+		opacity .8
+/*
+*	Tamaños
+*/
+.btn-sm
+	font-size 12px
+	line-height 12px
+	padding 6px 12px
+.btn-med
+	font-size 13px
+	line-height 14px
+	padding 8px 24px

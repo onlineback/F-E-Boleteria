@@ -1,0 +1,32 @@
+.ctnLogin
+	.login-ctn.login-init
+		h1.login-logo
+			img(src!="<?php echo $this->LinkStatic('img/coomuna.png'); ?>",width="276",height="65",alt="Coomuna")
+		h2 Administrador
+		ul.login-cat
+			li.sprite.icLAlquiler
+		form.mb32(action="/login/auth",method="POST", id="frmLogin")
+			.form-group
+				input(type="text",class="form-control",name="txtUser",placeholder="USUARIO")
+			.form-group
+				input(type="password",class="form-control",name="txtPassword",placeholder="CONTRASEÑA")
+			.form-group
+				button(class="btn btnPrimary btn-block",type="submit") ENTRAR
+		ul.login-lnk
+			li.fix
+				a(href="javascript:;",title="Olvide mi contraseña",class="lnkForgetPass") ¿Olvidé mi contraseña?
+	.login-ctn.login-forget
+		h1.login-logo
+			img(src!="<?php echo $this->LinkStatic('img/coomuna.png'); ?>",width="276",height="65",alt="Coomuna")
+		h2 Únete a coomuna y<br>empieza a compartir
+		ul.login-cat
+			li.sprite.icLAlquiler
+			li.sprite.icLCar
+			li.sprite.icLActivity
+		p.titForget Recuperar contraseña
+		form
+			.form-group
+				input(type="text",class="form-control",placeholder="USUARIO O EMAIL")
+			.form-group
+				button(class="btn btnPrimary btn-block",type="submit") ENVIAR
+		a(class="sprite lnkLgnBack",href="javascript:;",title="Volver")

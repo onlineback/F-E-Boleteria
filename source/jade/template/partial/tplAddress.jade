@@ -1,0 +1,55 @@
+script(type="text/template",id="tplAddAddress")
+	.ctnAddAddress.frm-addads
+		.menuCtl.row
+			.ctl
+				a.btnAddress.createAdr.active(data-iTab="#formadres",href="javascript:;",data-state="address") Crear dirección
+				a.btnAddress.listAdr(data-iTab="#alladres",href="javascript:;",data-state="list") Lista de direcciones
+script(type="text/template",id="tplAddressDetail")
+	{{ if(state=="address" || state=="editaddress"){ }}
+	#formadres.content-address.row
+		form#frmAddress
+			.column-5.r-bord-grey
+				.form-group
+					input(type="hidden",name="id",value="{{ if(typeof id!='undefined'){ }}{{= id }}{{ } }}")
+					input(type="text", name="name",placeholder="Nombre de dirección", class="form-control",value="{{ if(typeof name!='undefined'){ }}{{= name }}{{ } }}")
+					input(id="addressMap",type="text", name="address",placeholder="Dirección", class="form-control",value="{{ if(typeof address!='undefined'){ }}{{= address }}{{ } }}")
+					input(type="text", name="number",placeholder="Número", class="form-control",value="{{ if(typeof number!='undefined'){ }}{{= number }}{{ } }}")
+					input(type="text", name="aditional",placeholder="Adicional", class="form-control",value="{{ if(typeof aditional!='undefined'){ }}{{= aditional }}{{ } }}")
+					select(id="deparmentMap",name="iddeparment",class="form-control").
+						<option value="">Departamento</option>
+						{{ _.map(yOSON.deparments,function(value,index){  }}
+						<option value="{{= index }}" {{ if(typeof iddeparment!='undefined'&&iddeparment==index){ }}selected{{ } }}>{{= value }}</option>
+						{{ }); }}
+					select(id="provinceMap",name="idprovince",class="form-control")
+						option(value="") Provincia
+					select(id="districtMap",name="idubigeo",class="form-control")
+						option(value="") Distrito
+					input(type="text", name="reference",placeholder="Referencia", class="form-control last",value="{{ if(typeof reference!='undefined'){ }}{{= reference }}{{ } }}")
+					input(type="hidden",name="lat",id="latMap",value="{{ if(typeof lat!='undefined'){ }}{{= lat }}{{ } }}")
+					input(type="hidden",name="lng",id="lngMap",value="{{ if(typeof lng!='undefined'){ }}{{= lng }}{{ } }}")
+				.control.algn-center
+					button(class="btn btn-green btn-med lnk-geocodeaddress",type="button") Ver en el mapa
+			.column-5
+				#mapAddress
+				p.help-block.desc-mapaddress Lorem ipsum dolor sit amet, conse nn enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
+				.control.algn-center
+					button(type="submit",class="btn btn-blue btn-med") Guardar
+					{{ if(state=="editaddress"){ }}
+					a(class="btn btn-white btn-med lnk-canceladdress",href="javascript:;") Cancelar
+					{{ } }}
+	{{ }else{ }}
+	#alladres.content-address
+		table.tbleAddress
+			thead
+				td NOMBRE
+				td DIRECCIÓN
+				td.td-action1 EDITAR
+			tbody
+				{{ _.map(yOSON.address,function(json,id){ }}
+				tr
+					td {{= json.name }}
+					td {{= json.address }} {{ if(json.number){ }}{{= "#"+json.number }}{{ } }}
+					td.td-action1
+						a(href="javascript:;",data-id="{{= json.id }}",class="lnk-editaddress").glyph-icon.glyph-edit
+				{{ }) }}
+	{{ } }}

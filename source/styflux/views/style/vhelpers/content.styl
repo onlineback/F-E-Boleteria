@@ -1,0 +1,80 @@
+/**
+* Content CSS
+* @class content
+* @module content.css
+*/
+.row
+	*zoom 1
+	&:before,&:after
+		display table
+		content ""
+		line-height 0
+	&:after
+		clear both
+.box-center
+	margin 0 auto
+	*zoom 1
+	&:before,&:after
+		display table
+		content ""
+		line-height 0
+	&:after
+		clear both
+.container
+	background #fff
+	height auto
+	margin 64px auto 0
+	//max-width 1200px
+	min-height 600px
+	padding 0 0 20px
+	width 1000px
+	*zoom 1
+	&:before,&:after
+		display table
+		content ""
+		line-height 0
+	&:after
+		clear both
+.box-border
+	border 1px solid #f1f1f1
+	border-radius 4px
+	padding 10px
+.box-white
+	padding 30px 50px 0
+	*zoom 1
+	&:before,&:after
+		display table
+		content ""
+		line-height 0
+	&:after
+		clear both
+/*
+*	Grids
+*/
+.column-12, .column-11, .column-10, .column-9, .column-8, .column-7, .column-6, .column-5, .column-4,.column-3, .column-2, .column-1
+	box-sizing border-box
+	float left
+.column-12
+	width 100%
+.column-11
+	width 91.6667%
+.column-10
+	width 83.3333%
+.column-9
+	width 75%
+.column-8
+	width 66.6667%
+.column-7
+	width 58.3333%
+.column-6
+	width 50%
+.column-5
+	width 41.6667%
+.column-4
+	width 33.3333%
+.column-3
+	width 25%
+.column-2
+	width 16.6667%
+.column-1
+	width 8.33333%

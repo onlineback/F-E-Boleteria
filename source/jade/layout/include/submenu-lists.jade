@@ -1,0 +1,7 @@
+ul.submenu-bar
+	li(class!="column-4 <?php echo ($this->action=='index')?'active':''; ?>")
+		a(href="/mis-listados") MIS ANUNCIOS
+	li(class!="column-4 <?php echo ($this->action=='reserve')?'active':''; ?>")
+		a(href="/mis-listados/mis-reservas") MIS RESERVAS
+	li(class!="column-4 last <?php echo ($this->action=='favorite')?'active':''; ?>")
+		a(href="/mis-listados/mis-favoritos") FAVORITOS

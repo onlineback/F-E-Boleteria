@@ -1,0 +1,108 @@
+/*
+*	OwlCarousel
+*/
+.owl-carousel .owl-wrapper:after
+	content: "."
+	display: block
+	clear: both
+	visibility: hidden
+	line-height: 0
+	height: 0
+/* display none until init */
+.owl-carousel
+	display: none
+	position: relative
+	-ms-touch-action: pan-y
+.owl-carousel .owl-wrapper
+	display: none
+	position: relative
+	-webkit-transform: translate3d(0px, 0px, 0px)
+.owl-carousel .owl-wrapper-outer
+	overflow: hidden
+	position: relative
+	width: 100%
+.owl-carousel .owl-wrapper-outer.autoHeight
+	-webkit-transition: height 500ms ease-in-out;
+	-moz-transition: height 500ms ease-in-out;
+	-ms-transition: height 500ms ease-in-out;
+	-o-transition: height 500ms ease-in-out;
+	transition: height 500ms ease-in-out
+.owl-carousel .owl-item
+	float: left
+	padding-top 62px
+.owl-controls .owl-page,
+.owl-controls .owl-buttons div
+	cursor: pointer
+.owl-controls
+	user-select none
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+/* mouse grab icon */
+.grabbing 
+	cursor:url(grabbing.png) 8 8, move
+/* fix */
+.owl-carousel  .owl-wrapper, .owl-carousel .owl-item
+	-webkit-backface-visibility: hidden
+	-moz-backface-visibility:    hidden
+	-ms-backface-visibility:     hidden
+	-webkit-transform: translate3d(0,0,0)
+	-moz-transform: translate3d(0,0,0)
+	-ms-transform: translate3d(0,0,0)
+// 	Owl Carousel Owl Demo Theme
+.owl-theme .owl-controls
+	margin-top: 10px
+	text-align: center
+	position: absolute
+	top: 0
+/* Styling Next and Prev buttons */
+.owl-theme .owl-controls .owl-buttons div
+	color: #FFF
+	display: inline-block
+	zoom: 1
+	*display: inline
+	margin: 5px
+	padding: 3px 10px
+	font-size: 12px
+	border-radius: 30px
+	background: #869791
+	filter: Alpha(Opacity=50)
+	opacity: 0.5
+/* Use it for non-touch hover action */
+.owl-theme .owl-controls.clickable .owl-buttons div:hover
+	filter: Alpha(Opacity=100)
+	opacity: 1;
+	text-decoration: none
+/* Styling Pagination*/
+.owl-theme
+	.owl-controls
+		.owl-page
+			display: inline-block
+			zoom: 1
+			*display: inline
+			&:hover
+				.owl-numbers
+					border-color #bbbcbc
+					background #bbbcbc
+					color #FFF
+			&.active
+				cursor default
+				.owl-numbers
+					border-color #00bcba
+					background #00bcba
+					color #fff
+			.owl-numbers
+				background: #FFF
+				border-radius: 20px
+				border: 1px solid #bbbcbc
+				color: #a0a3a3
+				display: block
+				font-family family6
+				font-size: 13px
+				height: 24px
+				line-height: 24px
+				margin: 0px 4px
+				padding: 2px
+				width: 24px
+/* preloading images */
+.owl-item.loading
+	min-height: 150px;
+	background: url(AjaxLoader.gif) no-repeat center center

@@ -1,0 +1,21 @@
+ul.menu-bar
+	li
+		a(href="/mi-cuenta",title="Mi cuenta",class!="<?php echo ($this->action=='index')?'active':''; ?>")
+			i(class="glyph-icon glyph-account")
+			| Mi cuenta
+	li
+		a(href="/mi-cuenta/mis-notificaciones",title="Notificaciones",class!="<?php echo ($this->action=='notifications')?'active':''; ?>")
+			i(class="glyph-icon glyph-notify")
+			| Notificaciones
+	li
+		a(href="/mi-cuenta/mis-anuncios",title="Mis anuncios",class!="<?php echo ($this->action=='ads')?'active':''; ?>")
+			i(class="glyph-icon glyph-ads")
+			| Mis anuncios
+	li
+		a(href="/mi-cuenta/mis-reservas",title="Mis reservas",class!="<?php echo ($this->action=='reservation')?'active':''; ?>")
+			i(class="glyph-icon glyph-check")
+			| Mis reservas
+	li
+		a(href="/mi-cuenta/mi-auto",title="Mi auto",class!="<?php echo ($this->action=='car')?'active':''; ?>")
+			i(class="glyph-icon glyph-carpooling")
+			| Mi auto

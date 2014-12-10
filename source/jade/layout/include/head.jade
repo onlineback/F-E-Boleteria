@@ -1,0 +1,25 @@
+include vars.jade
+head
+	meta(charset="utf-8")
+	meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
+	title #{page_title}
+	meta(name="title", content="#{page_title}")
+	meta(name="description", content="#{page_desc}")
+	meta(name="keywords", content="#{page_keywords}")
+	meta(name="author", content="#{page_name}")
+	meta(name="viewport", content="width=device-width")
+	meta(name="language", content="#{lang}")
+	meta(name="robots", content="index,follow")
+	meta(property="og:site_name",content="#{page_url}")
+	meta(property="og:type",content="website")
+	meta(property="og:title",content="#{page_title}")
+	meta(property="og:description",content="#{page_desc}")
+	meta(property="og:url",content="#{page_url}")
+	meta(property="og:image",content="#{page_img}")
+	<?php $this->headMeta() ?>
+	link(href="#{page_img}", rel="image_src", type="image/jpeg")
+	link(href="#{page_fav}", rel="icon", type="image/vnd.microsoft.icon")
+	link(href="#{page_fav}", rel="shortcut icon", type="image/x-icon")
+	<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+	link(type="text/css", rel="stylesheet", href!="<?php echo STATIC_URL ?>/css/style.css?v=#{version}")
+	<?php echo $this->headLink() ?>

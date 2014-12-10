@@ -1,0 +1,13 @@
+ul.menu-bar.mcol-3
+	li
+		a(href="/agregar-aviso",title="Agregar Objetos",class!="titAddObj <?php echo ($this->action=='index')?'active':''; ?>")
+			i(class="glyph-icon glyph-object")
+			| Agregar Objetos
+	li
+		a(href="/agregar-aviso/vamos-juntos",title="Agregar ¡Vamos juntos!",class!="titAddCarpooling <?php echo ($this->action=='carpooling')?'active':''; ?>")
+			i(class="glyph-icon glyph-carpooling")
+			| Agregar ¡Vamos juntos!
+	li
+		a(href="/agregar-aviso/actividades",title="Agregar actividades",class!="titAddActivity <?php echo ($this->action=='activity')?'active':''; ?>")
+			i(class="glyph-icon glyph-activity")
+			| Agregar actividades

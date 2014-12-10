@@ -1,0 +1,260 @@
+header.admin
+	.box-center
+		<?php if($this->isAuth){ ?>
+		.ctn-mainmenu
+			ul.nav-opts
+				li
+					a(href="javascript:;",title="Menú",class="icMMenu lnkDropDown")
+						i(class="glyph-icon glyph-menu")
+					.head-menu.lefthmenu
+						span.decorHmenu
+						ul.list-hmenu
+							li
+								a(href="cms#group") ¿Quieres crear tu grupo?
+							li
+								a(href="cms#howworks") ¿Cómo funciona?
+							li
+								a(href="cms#questions") Preguntas frecuentes
+							li
+								a(href="cms#weusour") Nosotros
+							li
+								a(href="cms#rates") Tarifas
+							li
+								a(href="cms#legal") Legal
+							li
+								a(href="cms#contact") Contáctenos
+							li
+								a(href="cms") Blog
+			ul.nav-category
+				li.active
+					a(href="/",title="Todos")
+						i(class="glyph-icon glyph-all")
+					.sprite.icHDecor
+				li
+					a(href="/",title="Objetos")
+						i(class="glyph-icon glyph-object")
+					.sprite.icHDecor
+				li
+					a(href="/",title="¡Vamos Juntos!")
+						i(class="glyph-icon glyph-carpooling")
+					.sprite.icHDecor
+				li
+					a(href="/",title="Actividades")
+						i(class="glyph-icon glyph-activity")
+					.sprite.icHDecor
+		.ctn-optmenu
+			ul.nav-opts
+				li
+					a(href="javascript:;",title="Agregar",class="icMAddObj lnkDropDown")
+						i(class="glyph-icon glyph-add")
+					.head-menu.hmenu-icons
+						span.decorHmenu
+						ul.list-hmenu
+							li
+								a(href="/agregar-aviso")
+									span(class="decorACat addcat-object")
+										i(class="glyph-icon glyph-object")
+									| Agregar Objetos
+							li
+								a(href="/agregar-aviso/vamos-juntos")
+									span(class="decorACat addcat-carpooling")
+										i(class="glyph-icon glyph-carpooling")
+									| Agregar ¡Vamos juntos!
+							li
+								a(href="/agregar-aviso/actividades")
+									span(class="decorACat addcat-activity")
+										i(class="glyph-icon glyph-activity")
+									| Agregar Actividades
+			.nav-profile
+				a(href="javascript:;",class="icMProfile lnkDropDown")
+					img(class="img-perfil",src!="<?php echo ($this->dataUser->picture!='')?$this->LinkDinamic($this->dataUser->picture,'User'):$this->LinkStatic('img/user.jpg'); ?>",alt!="<?php echo $this->dataUser->name.' '.$this->dataUser->lastname; ?>",width="30",height="30")
+					span(class="name-perfil") <?php echo $this->dataUser->name.' '.$this->dataUser->lastname; ?>
+				.head-menu.hmenu-icons.fix
+					span.decorHmenu
+					ul.list-hmenu
+						li
+							a(href="/mi-cuenta")
+								span(class="decorACat")
+									i(class="glyph-icon glyph-account")
+								| Mi cuenta
+						li
+							a(href="/mi-cuenta/mis-notificaciones")
+								span(class="decorACat")
+									i(class="glyph-icon glyph-notify")
+								| Notificaciones
+						li
+							a(href="/mi-cuenta/mis-anuncios")
+								span(class="decorACat")
+									i(class="glyph-icon glyph-ads")
+								| Anuncios
+						li
+							a(href="/mi-cuenta/mis-reservas")
+								span(class="decorACat")
+									i(class="glyph-icon glyph-check")
+								| Mis reservas
+						li
+							a(href="/mi-cuenta/mi-auto")
+								span(class="decorACat")
+									i(class="glyph-icon glyph-carpooling")
+								| Mi auto
+						li.optExit
+							a(href="/login/logout") Salir
+			ul.nav-preferences
+				li
+					a(href="javascript:;",title="Mis Favoritos",class="icMFavorites lnkDropDown")
+						i(class="glyph-icon glyph-favorites")
+						span.nopts-notif 3
+					.head-menu.hmenu-imgs.fix.rightmenu
+						span.decorHmenu
+						.hlist-scroll
+							#scrollFavorites.tinyscrollbar(data-url="/static/js/dummy/favorites.json",data-template="#tplHeadFavorite",data-total="18")
+								.scrollbar
+									.track
+										.thumb
+											.end
+								.viewport
+									.overview
+										ul.list-hmenu
+											li(id="favorite-1")
+												a(href="javascript:;")
+													img(src="/static/img/elements/nexus.jpg")
+													span.ctnHMImg
+														h3 Vendo mi nexus 4
+														p Carla Izarraga
+											li(id="favorite-2")
+												a(href="javascript:;")
+													img(src="/static/img/elements/nexus.jpg")
+													span.ctnHMImg
+														h3 Curso de yoga
+														p Mario Ramirez
+											li(id="favorite-3")
+												a(href="javascript:;")
+													img(src="/static/img/elements/nexus.jpg")
+													span.ctnHMImg
+														h3 Presto mi skate
+														p Wally Flores
+											li(id="favorite-4")
+												a(href="javascript:;")
+													img(src="/static/img/elements/nexus.jpg")
+													span.ctnHMImg
+														h3 Vendo mi nexus 4
+														p Carla Izarraga
+											li(id="favorite-5")
+												a(href="javascript:;")
+													img(src="/static/img/elements/nexus.jpg")
+													span.ctnHMImg
+														h3 Curso de yoga
+														p Mario Ramirez
+											li(id="favorite-6")
+												a(href="javascript:;")
+													img(src="/static/img/elements/nexus.jpg")
+													span.ctnHMImg
+														h3 Presto mi skate
+														p Wally Flores
+											li(id="favorite-7")
+												a(href="javascript:;")
+													img(src="/static/img/elements/nexus.jpg")
+													span.ctnHMImg
+														h3 Vendo mi nexus 4
+														p Carla Izarraga
+											li(id="favorite-8")
+												a(href="javascript:;")
+													img(src="/static/img/elements/nexus.jpg")
+													span.ctnHMImg
+														h3 Curso de yoga
+														p Mario Ramirez
+											li(id="favorite-30")
+												a(href="javascript:;")
+													img(src="/static/img/elements/nexus.jpg")
+													span.ctnHMImg
+														h3 Vendo mi iphone5
+														p Eduardo Parra
+											li.loader-hmenu
+												span
+							.optAll
+								a(href="javascript:;") Ver todas
+				li
+					a(href="javascript:;",title="Mis Mensajes",class="icMMessage lnkDropDown")
+						i(class="glyph-icon glyph-mail")
+						span.nopts-notif 3
+					.head-menu.hmenu-imgs.rightmenu
+						span.decorHmenu
+						.hlist-scroll
+							.tinyscrollbar(data-url="/static/js/dummy/messages.json",data-template="#tplMessage")
+								.scrollbar
+									.track
+										.thumb
+											.end
+								.viewport
+									.overview
+										ul.list-hmenu
+											li
+												a(href="javascript:;")
+													img(src="/static/img/elements/pablo.jpg")
+													span.ctnHMImg
+														h3 Pablo Llosa
+														p Lorem ipsun thes sui
+														span Empieza a las 10:00 am
+											li
+												a(href="javascript:;")
+													img(src="/static/img/elements/pablo.jpg")
+													span.ctnHMImg
+														h3 Nani Gomez
+														p Lorem ipsun thes sui
+														span Empieza a las 10:00 am
+											li
+												a(href="javascript:;")
+													img(src="/static/img/elements/pablo.jpg")
+													span.ctnHMImg
+														h3 Carla Izarraga
+														p Lorem ipsun thes sui
+														span Empieza a las 10:00 am
+											li
+												a(href="javascript:;")
+													img(src="/static/img/elements/pablo.jpg")
+													span.ctnHMImg
+														h3 Pablo Llosa
+														p Lorem ipsun thes sui
+														span Empieza a las 10:00 am
+											li
+												a(href="javascript:;")
+													img(src="/static/img/elements/pablo.jpg")
+													span.ctnHMImg
+														h3 Nani Gomez
+														p Lorem ipsun thes sui
+														span Empieza a las 10:00 am
+											li
+												a(href="javascript:;")
+													img(src="/static/img/elements/pablo.jpg")
+													span.ctnHMImg
+														h3 Carla Izarraga
+														p Lorem ipsun thes sui
+														span Empieza a las 10:00 am
+											li
+												a(href="javascript:;")
+													img(src="/static/img/elements/pablo.jpg")
+													span.ctnHMImg
+														h3 Pablo Llosa
+														p Lorem ipsun thes sui
+														span Empieza a las 10:00 am
+											li
+												a(href="javascript:;")
+													img(src="/static/img/elements/pablo.jpg")
+													span.ctnHMImg
+														h3 Nani Gomez
+														p Lorem ipsun thes sui
+														span Empieza a las 10:00 am
+											li
+												a(href="javascript:;")
+													img(src="/static/img/elements/pablo.jpg")
+													span.ctnHMImg
+														h3 Carla Izarraga
+														p Lorem ipsun thes sui
+														span Empieza a las 10:00 am
+											li.loader-hmenu
+												span
+							.optAll
+								a(href="messages.html",title="Ver todas") Ver todas
+		<?php } ?>
+		h1.logoCoomuna
+			a(href="/",title="Coomuna") Coomuna

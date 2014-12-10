@@ -1,0 +1,97 @@
+
+block content
+	.contenido-resultados
+		aside.opciones-busquedad
+			form
+				.opcion
+					label Where?
+					select(name="cbowhere",id="cbowhere")
+						option Select now
+						option opcion 1
+						option opcion 2
+				.opcion
+					label Price Range
+					input(type="text",name="precio1",id="precio1",placeholder="---")
+					input(type="text",name="precio2",id="precio2",placeholder="---")
+					button(type="submit") Find
+				.opcion
+					label Category
+					select(multiple="multiple",size="5",name="category",id="category")
+						option item list1
+						option item list2
+						option(select="selected") item list3
+						option item list4
+						option item list5
+						option item list6
+						option item list7
+				.opcion
+					label When
+					.ordenar-radio
+						input(type="radio",name="rango")
+						span Today
+					.ordenar-radio
+						input(type="radio",name="rango",checked="checked")
+						span Date Range
+					.rango-fechas
+						input(type="text",name="fecha1",placeholder="FROM :")
+						input(type="text",name="fecha2",placeholder="TO :")
+		.resultados
+			h2 Results of events between &nbsp;
+				strong.resaltado 08/16/2014 &nbsp;
+				span at &nbsp;
+				strong.resaltado Teatro ABC (14)
+			section
+				article
+					img(src!="<?php echo STATIC_URL ?>/img/img-prueba/resultado.jpg")
+					.contenido-evento
+						h3 Title of Event
+						p	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+						ul
+							li
+								i.sprite.icHora
+								span From Thursday to Monday, 8pm. Sundays on 7pm.
+							li
+								i.sprite.icPrecio
+								span Price range: $20 - $50
+							li
+								i.sprite.icLugar
+								span Teatro ABC at Miraflores
+						.btn-irevento
+							a(href="javascript:;") Buy Ticket
+				article
+					img(src!="<?php echo STATIC_URL ?>/img/img-prueba/resultado.jpg")
+					.contenido-evento
+						h3 Title of Event
+						p	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+						ul
+							li
+								i.sprite.icHora
+								span From Thursday to Monday, 8pm. Sundays on 7pm.
+							li
+								i.sprite.icPrecio
+								span Price range: $20 - $50
+							li
+								i.sprite.icLugar
+								span Teatro ABC at Miraflores
+						.btn-irevento
+							a(href="javascript:;") Buy Ticket
+				article
+					img(src!="<?php echo STATIC_URL ?>/img/img-prueba/resultado.jpg")
+					.contenido-evento
+						h3 Title of Event
+						p	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+						ul
+							li
+								i.sprite.icHora
+								span From Thursday to Monday, 8pm. Sundays on 7pm.
+							li
+								i.sprite.icPrecio
+								span Price range: $20 - $50
+							li
+								i.sprite.icLugar
+								span Teatro ABC at Miraflores
+						.btn-irevento
+							a(href="javascript:;") Buy Ticket
+
+
+		.clear
