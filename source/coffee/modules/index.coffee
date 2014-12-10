@@ -206,3 +206,35 @@ yOSON.AppCore.addModule "mapa", ((Sb) ->
 		bindEvents()
 
 ),["plugins/gmaps.js"]
+
+#-----------------------------------------------------------------------------------------------
+# @Module: slider
+# @autor: joseluis
+# @Description: jose
+#-----------------------------------------------------------------------------------------------
+
+yOSON.AppCore.addModule "sliderimagen", ((Sb) ->
+	st=
+		"slider": "#bxslider"
+	dom= {}
+	mainTable= {}
+	catchDom= ()->
+		dom.mapa= $(st.mapa)
+	declareTable= ()->
+		$(".bxslider").bxSlider
+			pagerCustom: "#bx-pager"
+			controls: false
+	declareTable2= ()->
+		$(".video-principal").bxSlider
+			pagerCustom: "#videomini"
+			controls: false
+			video: true
+			useCSS: false
+	bindEvents= ()->
+		declareTable()
+		declareTable2()
+	init: (oParams) ->
+		catchDom()
+		bindEvents()
+
+),["plugins/jquery.bxslider.min.js","plugins/jquery.fitvids.js"]
