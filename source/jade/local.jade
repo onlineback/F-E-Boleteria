@@ -8,7 +8,7 @@ block content
                     h2.page-title Sample Tittle Venue Name: Un titulo de un local cualquiera
                     br
                     p.page-subtitlebg
-                        i.isprite.icAddressPinGrey
+                        i.isprite.icAddressPin
                         | La Paz, Miraflores 12578, Lima - Perú
                     br
                     p.page-subtitlebg (01) 2134343
@@ -53,24 +53,59 @@ block content
                                 p Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem.
                     table.venue-events
                         thead
-                            td.active
+                            td.nowShow.active
                                 a(href="javascript:;").lnkNow Now Showing
-                            td(colspan="2")
+                            td(colspan="2").upcomingShow
                                 a(href="javascript:;").lnkUpcoming Upcoming Shows
+                        tfoot
+                            tr
                         tbody
-                            td Dec 12, 2014 Friday @ 9:30
-                            td
-                                img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", alt="Masterclass", width="71", height="48")
-                            td
-                                h3.txtBlue Masterclass
-                            td
-                                a(href="javascript:;").btn.btnOrange Buy Tickets
+                            tr
+                                td.dates Dec 12, 2014 Friday @ 9:30
+                                td.imgTable
+                                    img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", alt="Masterclass", width="71", height="48")
+                                td.mclass
+                                    h3.txtBlue Masterclass
+                                td.buyTicks
+                                    a(href="javascript:;").btn.bgOrange Buy Tickets
+                            tr
+                                td.dates Dec 12, 2014 Friday @ 9:30
+                                td.imgTable
+                                    img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", alt="Masterclass", width="71", height="48")
+                                td.mclass
+                                    h3.txtBlue Masterclass
+                                td.buyTicks
+                                    a(href="javascript:;").btn.bgOrange Buy Tickets
+                            tr
+                                td.dates Dec 12, 2014 Friday @ 9:30
+                                td.imgTable
+                                    img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", alt="Masterclass", width="71", height="48")
+                                td.mclass
+                                    h3.txtBlue Masterclass
+                                td.buyTicks
+                                    a(href="javascript:;").btn.bgOrange Buy Tickets
+                            tr
+                                td.dates Dec 12, 2014 Friday @ 9:30
+                                td.imgTable
+                                    img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", alt="Masterclass", width="71", height="48")
+                                td.mclass
+                                    h3.txtBlue Masterclass
+                                td.buyTicks
+                                    a(href="javascript:;").btn.bgOrange Buy Tickets
+                            tr
+                                td.dates Dec 12, 2014 Friday @ 9:30
+                                td.imgTable
+                                    img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", alt="Masterclass", width="71", height="48")
+                                td.mclass
+                                    h3.txtBlue Masterclass
+                                td.buyTicks
+                                    a(href="javascript:;").btn.bgOrange Buy Tickets
                     .ctn360view
                         h3 Vista 360º
                         .streetview
-                        h3 About Venue name
+                        h3.mt17 About Venue name
                         p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                        .ctnDescription
+                        .ctnDescription.row
                             ul.txtBlue
                                 li Venue capacity:
                                 li Administrator:
