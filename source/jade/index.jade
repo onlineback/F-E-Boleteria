@@ -44,7 +44,7 @@ block content
 			|	foreach ($this->categorias as $key => $value) { ?>
 			li(class!="",style!="background: none repeat scroll 0 0 <?php echo $value['codigoColor']; ?>;")
 				a(href="javascript:;",data-id!="<?php echo $value['id']; ?>")
-					img(src!="<?php echo DINAMIC_URL; ?>/categoria/icono/<?php echo $value['icono']; ?>")
+					img(onerror!="this.onerror=null; this.src='<?php echo STATIC_URL . '/img/categorias/exposicion.png'; ?>';", src!="<?php echo !empty($value['icono'])?DINAMIC_URL . '/categoria/icono/'. $value['icono']:STATIC_URL . '/img/categorias/exposicion.png'; ?>")
 					br
 					span <?php echo strtoupper($value['nombre']); ?>
 			<?php }} ?>
@@ -61,7 +61,7 @@ block content
 				img(src!="<?php echo DINAMIC_URL ?>/eventos/banner/<?php echo $value['evento_contenido_imagenprincipal']; ?>",class="img-responsive")
 				.subtitulo
 					p(style!="background: none repeat scroll 0 0 <?php echo $value['categoria_color']; ?>;")
-						img(src!="<?php echo DINAMIC_URL ?>/categoria/icono/<?php echo $value['categoria_icono']; ?>" ,class="img-subtitulo")
+						img(onerror!="this.onerror=null; this.src='<?php echo STATIC_URL . '/img/categorias/exposicion.png'; ?>';",src!="<?php echo DINAMIC_URL ?>/categoria/icono/<?php echo $value['categoria_icono']; ?>" ,class="img-subtitulo")
 						span <?php echo $value['categoria_name']; ?>
 					a(href="javascript:;",class="social-box")
 						i.sprite.icFacebook
