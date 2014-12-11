@@ -155,21 +155,35 @@ yOSON.AppCore.addModule "datatableRep", ((Sb) ->
 yOSON.AppCore.addModule "index", ((Sb) ->
 	st=
 		"slider": ".contenido-slider"
+		"picker":".fecha1"
+		"picker2":".fecha2"
 	dom= {}
 	mainTable= {}
 	catchDom= ()->
 		dom.mapa= $(st.mapa)
+		dom.picker= $(st.picker)
+		dom.picker2= $(st.picker2)
 	declareTable= ()->
 		$(".contenido-slider").bxSlider
 			auto: true
 			autoControls: true
+	calenSearch= ()->
+		dom.picker.datepicker
+			altField: "#from"
+			altFormat: "yy-mm-dd"
+	calenSearch2= ()->
+		dom.picker2.datepicker
+			altField: "#to"
+			altFormat: "yy-mm-dd"
 	bindEvents= ()->
 		declareTable()
+		calenSearch()
+		calenSearch2()
 	init: (oParams) ->
 		catchDom()
 		bindEvents()
 
-),["plugins/jquery.bxslider.min.js"]
+),["plugins/jquery.bxslider.min.js","plugins/jqUI.js"]
 #-----------------------------------------------------------------------------------------------
 # @Module: eventos
 # @autor: joseluis
