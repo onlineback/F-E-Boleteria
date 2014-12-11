@@ -21,8 +21,8 @@ block content
 			li
 				img(src!="<?php echo DINAMIC_URL ?>/eventos/destacado/<?php echo $value['nombreImagen']; ?>")
 				.entrada
-					h2 LOREM IPSUM SIT
-					p Magna Amet Vestibulum Parispatis Ante Elit
+					h2 <?php echo $value['evento_titulo']; ?>
+					p <?php echo $value['descripcion']; ?>
 					a(data-id!="<?php echo $value['idEvento']; ?>",href="javascript:;") COMPRAR ENTRADAS
 				<?php }} ?>
 
