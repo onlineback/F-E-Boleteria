@@ -40,11 +40,11 @@ block content
 				//	input(id="day",name="day",placeholder="day")
 				//	i.sprite.icCboicon2
 				.box-input
-					input(type="text",name="fecha1",placeholder="from",class="fecha1")
+					input(type="text",placeholder="from",class="fecha1",value!="<?php echo $this->from_display; ?>")
 					<?php echo $this->form->getElement('from') ?>
 					i.sprite.icCboicon2
 				.box-input
-					input(type="text",name="fecha1",placeholder="To",class="fecha2")
+					input(type="text",placeholder="To",class="fecha2",value!="<?php echo $this->to_display; ?>")
 					<?php echo $this->form->getElement('to') ?>
 					i.sprite.icCboicon2
 				button(id="search",type="submit") SEARCH
