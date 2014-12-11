@@ -16,10 +16,13 @@ block content
 	.clear
 	.slider-home
 		ul.contenido-slider.bxslider
+			<?php if(count($this->eventoDestacados)>0){ 
+			|	foreach ($this->eventoDestacados as $key => $value) { ?>
 			li
-				img(src!="<?php echo STATIC_URL ?>/img/img-prueba/sliderhome1.jpg")
+				img(src!="<?php echo DINAMIC_URL ?>/eventos/destacado/<?php echo $value['nombreImagen']; ?>")
 				.entrada
-					a(href="javascript:;") COMPRAR ENTRADAS
+					a(data-id!="<?php echo $value['idEvento']; ?>",href="javascript:;") COMPRAR ENTRADAS
+				<?php }} ?>
 			li
 				img(src!="<?php echo STATIC_URL ?>/img/img-prueba/sliderhome1.jpg")
 				.entrada
