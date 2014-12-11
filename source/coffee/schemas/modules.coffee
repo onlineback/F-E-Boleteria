@@ -7,12 +7,17 @@ yOSON.AppSchema.modules=
 						yOSON.AppCore.runModule 'index'
 					'byDefault': ->
 				allActions: ->
+			'noticias':
+				actions :
+					'index' : ->
+						yOSON.AppCore.runModule 'noticia'
+					'byDefault': ->
+					allActions: ->
 			'eventos':
 					actions :
 						'index' : ->
 							yOSON.AppCore.runModule 'mapa'
-							yOSON.AppCore.runModule 'detalleEvento'
-							yOSON.AppCore.runModule 'sliderimagen'
+							yOSON.AppCore.runModule 'evento'
 						'byDefault': ->
 					allActions: ->
 			byDefault : ->
