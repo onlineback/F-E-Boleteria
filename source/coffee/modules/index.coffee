@@ -146,7 +146,30 @@ yOSON.AppCore.addModule "datatableRep", ((Sb) ->
 		catchDom()
 		bindEvents()
 ),["plugins/jqDatatable.js"]
+#-----------------------------------------------------------------------------------------------
+# @Module: mapa
+# @autor: joseluis
+# @Description: jose
+#-----------------------------------------------------------------------------------------------
 
+yOSON.AppCore.addModule "index", ((Sb) ->
+	st=
+		"slider": ".contenido-slider"
+	dom= {}
+	mainTable= {}
+	catchDom= ()->
+		dom.mapa= $(st.mapa)
+	declareTable= ()->
+		$(".contenido-slider").bxSlider
+			auto: true
+			autoControls: true
+	bindEvents= ()->
+		declareTable()
+	init: (oParams) ->
+		catchDom()
+		bindEvents()
+
+),["plugins/jquery.bxslider.min.js"]
 #-----------------------------------------------------------------------------------------------
 # @Module: eventos
 # @autor: joseluis

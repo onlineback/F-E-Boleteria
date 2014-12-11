@@ -15,8 +15,19 @@ block content
 						i.sprite.icSearch
 	.clear
 	.slider-home
-		.contenido-slider
-			img(src!="<?php echo STATIC_URL ?>/img/img-prueba/sliderhome1.jpg")
+		ul.contenido-slider.bxslider
+			li
+				img(src!="<?php echo STATIC_URL ?>/img/img-prueba/sliderhome1.jpg")
+				.entrada
+					a(href="javascript:;") COMPRAR ENTRADAS
+			li
+				img(src!="<?php echo STATIC_URL ?>/img/img-prueba/sliderhome1.jpg")
+				.entrada
+					a(href="javascript:;") COMPRAR ENTRADAS
+			li
+				img(src!="<?php echo STATIC_URL ?>/img/img-prueba/sliderhome1.jpg")
+				.entrada
+					a(href="javascript:;") COMPRAR ENTRADAS
 	.contenido-search
 		.container-search
 			form
@@ -32,8 +43,8 @@ block content
 					<?php echo $this->form->getElement('to') ?>
 					i.sprite.icCboicon2
 				button(id="search",type="submit") SEARCH
-	.menu-categorias
-		ul.listado-categorias
+	.menu-categorias.row
+		ul.listado-categorias.row
 			li.categoria1
 				a(href="javascript:;")
 					img(src!="<?php echo STATIC_URL ?>/img/categorias/todo.png")
