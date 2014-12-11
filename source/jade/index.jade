@@ -71,7 +71,7 @@ block content
 			|	foreach ($this->search as $key => $value) { ?>
 			.box
 				<?php if(!empty($value['evento_tag_color'])){?>
-				<?php $styles .= '.tag'.$value['id'].':after {border-color: '.$value['evento_tag_coloroscuro'].' '.$value['evento_tag_coloroscuro'].' transparent transparent;border-style: solid;border-width: 5px 10px;content: " ";height: 0;left: 0;top: 100%;width: 0;} .tag'.$value['id'].' {background-color: '.$value['evento_tag_color'].';color: #fff;font-size: 16px;font-weight: bold;left: -20px;min-width: 12%;padding: 8px 24px;position: absolute;text-transform: uppercase;top: 23px;} ';?>
+				<?php $styles .= '.tag'.$value['id'].':after {position:absolute; border-color: '.$value['evento_tag_coloroscuro'].' '.$value['evento_tag_coloroscuro'].' transparent transparent;border-style: solid;border-width: 5px 10px;content: " ";height: 0;left: 0;top: 100%;width: 0;} .tag'.$value['id'].' {background-color: '.$value['evento_tag_color'].';color: #fff;font-size: 16px;font-weight: bold;left: -20px;min-width: 12%;padding: 8px 24px;position: absolute;text-transform: uppercase;top: 23px;} ';?>
 				div(class!="tag<?php echo $value['id']; ?>") <?php echo $value['evento_tag_nametag']; ?>
 				<?php } ?>
 				img(src!="<?php echo DINAMIC_URL ?>/eventos/banner/<?php echo $value['evento_contenido_imagenprincipal']; ?>",class="img-responsive")
