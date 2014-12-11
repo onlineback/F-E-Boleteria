@@ -208,7 +208,7 @@ yOSON.AppCore.addModule "mapa", ((Sb) ->
 ),["plugins/gmaps.js"]
 
 #-----------------------------------------------------------------------------------------------
-# @Module: slider
+# @Module: evento
 # @autor: joseluis
 # @Description: jose
 #-----------------------------------------------------------------------------------------------
@@ -220,19 +220,45 @@ yOSON.AppCore.addModule "sliderimagen", ((Sb) ->
 	mainTable= {}
 	catchDom= ()->
 		dom.mapa= $(st.mapa)
-	declareTable= ()->
+	sliderimagen= ()->
 		$(".bxslider").bxSlider
 			pagerCustom: "#bx-pager"
+			preloadImages: "all"
 			controls: false
-	declareTable2= ()->
+	slidervideo= ()->
 		$(".video-principal").bxSlider
 			pagerCustom: "#videomini"
 			controls: false
 			video: true
 			useCSS: false
+	facebook= ()->
+		((d, s, id) ->
+				js = undefined
+				fjs = d.getElementsByTagName(s)[0]
+				return  if d.getElementById(id)
+				js = d.createElement(s)
+				js.id = id
+				js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&appId=404966819653618&version=v2.0"
+				fjs.parentNode.insertBefore js, fjs
+				return
+		) document, "script", "facebook-jssdk"
+	twitter= ()->
+		((d, s, id) ->
+			js = undefined
+			fjs = d.getElementsByTagName(s)[0]
+			p = (if /^http:/.test(d.location) then "http" else "https")
+			unless d.getElementById(id)
+				js = d.createElement(s)
+				js.id = id
+				js.src = p + "://platform.twitter.com/widgets.js"
+				fjs.parentNode.insertBefore js, fjs
+			return
+			) document, "script", "twitter-wjs"
 	bindEvents= ()->
-		declareTable()
-		declareTable2()
+		sliderimagen()
+		slidervideo()
+		facebook()
+		twitter()
 	init: (oParams) ->
 		catchDom()
 		bindEvents()

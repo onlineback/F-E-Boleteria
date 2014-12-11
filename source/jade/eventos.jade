@@ -10,7 +10,12 @@ block content
             .sidebar-info.row
                 .imgCtn
                     img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg")
-                p.redes-evento redes
+                #fb-root
+                .redes-evento
+                    .fb-like(data-href="https://developers.facebook.com/docs/plugins/",data-layout="button_count",data-action="like",data-show-faces="true",data-share="false")
+                .redes-evento-twitter
+                    a(href="https://twitter.com/share",class="twitter-share-button") Tweet
+                .clear
                 .lista-evento
                     ul
                         li
@@ -87,13 +92,13 @@ block content
                         ul.video-principal
                             li
                                 iframe(src="//www.youtube.com/embed/3s9sH82rHjI",width="640",height="360",frameborder="0",allowfullscreen="true")
-                            li
+                            //li
                                 iframe(src="//www.youtube.com/embed/3DAIgaOb-Ig",width="640",height="360",frameborder="0",allowfullscreen="true")
-                            li
+                            //li
                                 iframe(src="//www.youtube.com/embed/NsyP2NkE2G0",width="640",height="360",frameborder="0",allowfullscreen="true")
-                            li
+                            //li
                                 iframe(src="//www.youtube.com/embed/94xvfWpuEWM",width="640",height="360",frameborder="0",allowfullscreen="true")
-                            li
+                            //li
                                 iframe(src="//www.youtube.com/embed/Jbmf_O8Mul8",width="640",height="360",frameborder="0",allowfullscreen="true")
                         .miniaturas#videomini
                             a(href="" , data-slide-index="0")
@@ -114,4 +119,4 @@ block content
                     input(type="text",name="evento-suscribir", id="evento-suscribir",placeholder="Enter Your Email")
                     button Subscribe
             .clear
-    .clear
+
