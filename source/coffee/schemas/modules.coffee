@@ -4,26 +4,20 @@ yOSON.AppSchema.modules=
 			'index':
 				actions :
 					'index' : ->
-						#yOSON.AppCore.runModule 'showAds', {"callbackShow": "#homeAds"}
-						yOSON.AppCore.runModule 'datatableCfg'
-					'reports' : ->
-						#yOSON.AppCore.runModule 'showAds', {"callbackShow": "#homeAds"}
-						yOSON.AppCore.runModule 'datatableRep'
-					'login' : ->
-						#yOSON.AppCore.runModule 'showAds', {"callbackShow": "#homeAds"}
-						yOSON.AppCore.runModule 'datatableCfg'
-					'eventos' : ->
-						yOSON.AppCore.runModule 'detalleEvento'
-					'mapa' : ->
-						yOSON.AppCore.runModule 'mapa'
+						yOSON.AppCore.runModule 'index'
 					'byDefault': ->
 				allActions: ->
+			'noticias':
+				actions :
+					'index' : ->
+						yOSON.AppCore.runModule 'noticia'
+					'byDefault': ->
+					allActions: ->
 			'eventos':
 					actions :
 						'index' : ->
 							yOSON.AppCore.runModule 'mapa'
-							yOSON.AppCore.runModule 'detalleEvento'
-							yOSON.AppCore.runModule 'sliderimagen'
+							yOSON.AppCore.runModule 'evento'
 						'byDefault': ->
 					allActions: ->
 			byDefault : ->

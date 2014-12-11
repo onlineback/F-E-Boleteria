@@ -96,29 +96,61 @@ i.isprite
 .slider-imagenes,.videos
 	margin-bottom 15px
 #tabs
-	background #c5c8ce
 	color #787878
+	border none
 	li
 		float left
-		margin-right 5px
 		a
 			display block
-			padding 17px 30px
+			padding 11px 17px
 			background #c5c8ce
 			color #787878
-#tabs_container
+			font-size 14px
+			font-family family2
+
+.ui-tabs
+	border-radius 0px
+	position relative
+.ui-tabs .ui-tabs-nav
+	margin 0px
+	background #c5c8ce
+	border none
+	border-radius 0px
+.ui-tabs .ui-tabs-nav li
+	list-style none
+	float left
+	position relative
+	top 0
+	margin 0
+	border none
+	border-right 1px solid #9ea0a3
+	border-bottom-width 0
+	font-family family3
+	padding 0
+	white-space nowrap
+.ui-tabs .ui-tabs-nav .ui-tabs-anchor
+	float left
+	padding .5em 1em
+	text-decoration none
+.ui-tabs .ui-tabs-nav li.ui-tabs-active .ui-tabs-anchor,
+.ui-tabs .ui-tabs-nav li.ui-state-disabled .ui-tabs-anchor,
+.ui-tabs .ui-tabs-nav li.ui-tabs-loading .ui-tabs-anchor
+	cursor text
+	background  #eaeaea !important
+	color #2ea4c3 !important
+.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-active .ui-tabs-anchor
+	cursor pointer
+.ui-tabs .ui-tabs-panel
+	display block
+	border-width 0px
+	padding 1em 1.4em
 	background #eaeaea
-	color #787878
-	overflow hidden
 	font-family family3
 	font-size 14px
-	padding 20px 20px
+	color #787878
 	line-height 20px
 	p
 		padding-bottom 10px
-.tabulous_active
-	background  #eaeaea !important
-	color #2ea4c3 !important
 .miniaturas
 	padding-top 15px
 	img
@@ -159,3 +191,21 @@ i.isprite
 	width 278px
 	height 148px
 	margin-bottom 15px
+.imprimir
+	position absolute
+	right 10px
+	top 10px
+	span
+		float left
+	i
+		float left
+		margin-left 10px
+.cast,.produce
+	color #2ea4c3
+.contenido-produce
+	margin 0
+	p
+		padding-bottom 0px !important
+	img
+		float left
+		margin-right 20px

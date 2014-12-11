@@ -146,29 +146,53 @@ yOSON.AppCore.addModule "datatableRep", ((Sb) ->
 		catchDom()
 		bindEvents()
 ),["plugins/jqDatatable.js"]
-
 #-----------------------------------------------------------------------------------------------
-# @Module: eventos
+# @Module: index
 # @autor: joseluis
 # @Description: jose
 #-----------------------------------------------------------------------------------------------
-yOSON.AppCore.addModule "detalleEvento", ((Sb) ->
+
+yOSON.AppCore.addModule "index", ((Sb) ->
 	st=
-		"tab": "#tabs"
+		"slider": ".contenido-slider"
+		"picker":".fecha1"
+		"picker2":".fecha2"
 	dom= {}
 	mainTable= {}
 	catchDom= ()->
-		dom.tab= $(st.tab)
+		dom.mapa= $(st.mapa)
+		dom.picker= $(st.picker)
+		dom.picker2= $(st.picker2)
 	declareTable= ()->
-		$("#tabs").tabulous()
-
+		$(".contenido-slider").bxSlider
+			auto: true
+			autoControls: true
+	calenSearch= ()->
+		dom.picker.datepicker
+			altField: "#from"
+			altFormat: "yy-mm-dd"
+			changeMonth: true
+			onClose: (selectedDate) ->
+				$(".fecha2").datepicker "option", "minDate", selectedDate
+				return
+	calenSearch2= ()->
+		dom.picker2.datepicker
+			altField: "#to"
+			altFormat: "yy-mm-dd"
+			changeMonth: true
+			onClose: (selectedDate) ->
+				$(".fecha1").datepicker "option", "maxDate", selectedDate
+				return
 	bindEvents= ()->
 		declareTable()
+		calenSearch()
+		calenSearch2()
 	init: (oParams) ->
 		catchDom()
 		bindEvents()
 
-),["plugins/tabulous.js"]
+),["plugins/jquery.bxslider.min.js","plugins/jqUI.js"]
+
 #-----------------------------------------------------------------------------------------------
 # @Module: mapa
 # @autor: joseluis
@@ -213,20 +237,24 @@ yOSON.AppCore.addModule "mapa", ((Sb) ->
 # @Description: jose
 #-----------------------------------------------------------------------------------------------
 
-yOSON.AppCore.addModule "sliderimagen", ((Sb) ->
+yOSON.AppCore.addModule "evento", ((Sb) ->
 	st=
-		"slider": "#bxslider"
+		"slider": ".bxslider"
+		"tab":"#tabs"
+		"video":".video-principal"
 	dom= {}
 	mainTable= {}
 	catchDom= ()->
-		dom.mapa= $(st.mapa)
+		dom.slider= $(st.slider)
+		dom.tab= $(st.tab)
+		dom.video= $(st.video)
 	sliderimagen= ()->
-		$(".bxslider").bxSlider
+		dom.slider.bxSlider
 			pagerCustom: "#bx-pager"
 			preloadImages: "all"
 			controls: false
 	slidervideo= ()->
-		$(".video-principal").bxSlider
+		dom.video.bxSlider
 			pagerCustom: "#videomini"
 			controls: false
 			video: true
@@ -254,13 +282,60 @@ yOSON.AppCore.addModule "sliderimagen", ((Sb) ->
 				fjs.parentNode.insertBefore js, fjs
 			return
 			) document, "script", "twitter-wjs"
+	eventotab= ()->
+		dom.tab.tabs()
 	bindEvents= ()->
 		sliderimagen()
 		slidervideo()
+		facebook()
+		twitter()
+		eventotab()
+	init: (oParams) ->
+		catchDom()
+		bindEvents()
+
+),["plugins/jquery.bxslider.min.js","plugins/jquery.fitvids.js","plugins/jquery-ui.min.js"]
+#-----------------------------------------------------------------------------------------------
+# @Module: noticia
+# @autor: joseluis
+# @Description: jose
+#-----------------------------------------------------------------------------------------------
+yOSON.AppCore.addModule "noticia", ((Sb) ->
+	st=
+		"tab": "#tabs"
+	dom= {}
+	mainTable= {}
+	catchDom= ()->
+		dom.tab= $(st.tab)
+	facebook= ()->
+		((d, s, id) ->
+			js = undefined
+			fjs = d.getElementsByTagName(s)[0]
+			return  if d.getElementById(id)
+			js = d.createElement(s)
+			js.id = id
+			js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&appId=404966819653618&version=v2.0"
+			fjs.parentNode.insertBefore js, fjs
+			return
+		) document, "script", "facebook-jssdk"
+	twitter= ()->
+		((d, s, id) ->
+			js = undefined
+			fjs = d.getElementsByTagName(s)[0]
+			p = (if /^http:/.test(d.location) then "http" else "https")
+			unless d.getElementById(id)
+				js = d.createElement(s)
+				js.id = id
+				js.src = p + "://platform.twitter.com/widgets.js"
+				fjs.parentNode.insertBefore js, fjs
+			return
+		) document, "script", "twitter-wjs"
+
+	bindEvents= ()->
 		facebook()
 		twitter()
 	init: (oParams) ->
 		catchDom()
 		bindEvents()
 
-),["plugins/jquery.bxslider.min.js","plugins/jquery.fitvids.js"]
+),["plugins/jquery-ui.min.js"]
