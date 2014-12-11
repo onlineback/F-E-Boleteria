@@ -14,7 +14,10 @@ block content
                     p.page-subtitlebg (01) 2134343
                 .sidebar-info.row
                     .imgCtn
-                        img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg")
+                        .centerImg
+                            img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg")
+                            a(href="javascript:;")
+                                i.sprite.icExpandImg
                         //img(src!="<?php echo STATIC_URL ?>/img/img-prueba/sombra.png",class="sombra")
                     .imgSelector.row
                         img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", width="66", height="58").active
