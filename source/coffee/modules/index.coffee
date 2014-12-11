@@ -160,7 +160,7 @@ yOSON.AppCore.addModule "detalleEvento", ((Sb) ->
 	catchDom= ()->
 		dom.tab= $(st.tab)
 	declareTable= ()->
-		$("#tabs").tabulous()
+		$("#tabs").tabs()
 
 	bindEvents= ()->
 		declareTable()
@@ -168,7 +168,7 @@ yOSON.AppCore.addModule "detalleEvento", ((Sb) ->
 		catchDom()
 		bindEvents()
 
-),["plugins/tabulous.js"]
+),["plugins/jquery-ui.min.js"]
 #-----------------------------------------------------------------------------------------------
 # @Module: mapa
 # @autor: joseluis
