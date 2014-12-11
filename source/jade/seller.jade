@@ -7,93 +7,121 @@ block content
         .fondo-evento.row
             .box-center
                     .layer2
-                    .ctnSeller
+                    .ctnSeller.row
                         .sidebar-info.row
                             .imgCtn
                                 .centerImg
                                     img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg" height="107" width="285")
                                 //img(src!="<?php echo STATIC_URL ?>/img/img-prueba/sombra.png",class="sombra")
                             a(href="javascript:;").web-seller livenation.com
-                            .ctnSocialMedia
+                            ul.ctnSocialMedia
+                                li
+                                    a(href="javascript:;")
+                                        i.isprite.icFacebookcontacto
+                                        | livenation.facebook
+                                li
+                                    a(href="javascript:;")
+                                        i.isprite.icTwittercontacto
+                                        | @livenation.twitter
+                                li
+                                    a(href="javascript:;")
+                                        i.isprite.icYoutubecontacto
+                                        | /livenation.youtube
+                                li
+                                    a(href="javascript:;")
+                                        i.isprite.icGooglecontacto
+                                        | livenation.google
                         .page-ctn
-                            //.extra-evento
-                                #tabs
-                                    ul
+                            .seller-information
+                                h3.txtBlue Seller's Information
+                                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Noster sapiente honestum inpendente aetatis succumbere melius consistat erat efficeret, erroribus dicant factorum reperire, theophrasti odit multitudinem arte audeam, inquam, incommoda stabilitas quamvis maximasque necessitatibus. Multo salutandi vivi nec silano praesenti tantopere optimus retinere. Manum facillime exercendi, elegantis honeste appellantur facerem succumbere consulatu aliquid sapienti aliter quod, postremo artifex praesentium, temperantia eruditi videor neglegit renovata credere necessarius aliquod conciliant erroribus, everti clarorum fabulas nostras conscientia geometriaque. Gravitate pecuniae ponderum perfruique deserere statuerunt.
+                                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Noster sapiente honestum inpendente aetatis succumbere melius consistat erat efficeret, erroribus dicant factorum reperire, theophrasti odit multitudinem arte audeam, inquam, incommoda stabilitas quamvis maximasque necessitatibus. Multo salutandi vivi nec silano praesenti tantopere optimus retinere. Manum facillime exercendi, elegantis honeste appellantur facerem succumbere consulatu aliquid sapienti aliter quod, postremo artifex praesentium, temperantia eruditi videor neglegit renovata credere necessarius aliquod conciliant erroribus, everti clarorum fabulas nostras conscientia geometriaque. Gravitate pecuniae ponderum perfruique deserere statuerunt.
+                                p.contact-info.txtBlue
+                                    i.isprite.icMail
+                                    | Contacto: 
+                                    a(href="mailto:webmaster@example.com").txtBlue contacto@livenation.com
+                            .show-detail-block.row.nowShowing
+                                .title
+                                    .tab-title
+                                        i.isprite.icStar
+                                        | Now showing
+                                .cnt-detail.row
+                                    .imgCtn
+                                        img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", width="140", height="196")
+                                    .information
+                                        h3.txtBlue Title of Event
+                                        p Lorem ipsum Dolore culpa velit sit Excepteur in ea in quis sint qui proident proident anim ea.
+                                        ul.more-information
+                                            li
+                                                i.isprite.icHora
+                                                | From Thursday to Monday, 8pm. Sundays on 7pm.
+                                            li
+                                                i.isprite.icPrecio
+                                                | Price range: $20 - $50
+                                            li
+                                                i.isprite.icLugar
+                                                | Teatro Rollys at Miraflores
+                                        a(href="javascript:;").btn.bgOrange Buy Tickets
+                            hr
+                            .show-detail-block.row.comingSoon
+                                .title
+                                    .tab-title
+                                        i.isprite.icCalendar
+                                        | Coming soon
+                                .cnt-detail.row
+                                    .imgCtn
+                                        img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", width="140", height="196")
+                                    .information
+                                        h3.txtBlue Title of Event
+                                        p Lorem ipsum Dolore culpa velit sit Excepteur in ea in quis sint qui proident proident anim ea.
+                                        ul.more-information
+                                            li
+                                                i.isprite.icHora
+                                                | From Thursday to Monday, 8pm. Sundays on 7pm.
+                                            li
+                                                i.isprite.icPrecio
+                                                | Price range: $20 - $50
+                                            li
+                                                i.isprite.icLugar
+                                                | Teatro Rollys at Miraflores
+                                        a(href="javascript:;").btn.bgOrange Buy Tickets
+                            hr
+                            .show-detail-block.row.past-events
+                                .title
+                                    a(href="javascript:;").seeThemAll See them all
+                                    .tab-title
+                                        i.isprite.icStar
+                                        | Past events
+                                .cnt-detail.row
+                                    ul.list-events
                                         li
-                                            a(href="#tabs-1" ) TAB 1
+                                            a(href="javascript:;")
+                                                img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", width="140", height="196")
+                                                .event-information
+                                                    h3.txtBlue Title of events
+                                                    span 2009
                                         li
-                                            a(href="#tabs-2" ) TAB 2
+                                            a(href="javascript:;")
+                                                img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", width="140", height="196")
+                                                .event-information
+                                                    h3.txtBlue Title of events
+                                                    span 2009
                                         li
-                                            a(href="#tabs-3" ) TAB 3
-                                        .clear
-                                #tabs_container
-                                    #tabs-1
-                                        p Proin elit arcu, rutrum commodo, vehicula tempus, commodo a, risus. Curabitur nec arcu. Donec sollicitudin mi sit amet mauris. Nam elementum quam ullamcorper ante. Etiam aliquet massa et lorem. Mauris dapibus lacus auctor risus.
-                                        p enean tempor ullamcorper leo. Vivamus sed magna quis ligula eleifend adipiscing. Duis orci. Aliquam sodales tortor vitae ipsum. Aliquam nulla. Duis aliquam molestie erat. Ut et mauris vel pede varius sollicitudin. Sed ut dolor nec orci tincidunt interdum. Phasellus ipsum. Nunc tristique tempus lectus.
-                                    #tabs-2
-                                        p Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Duis scelerisque molestie turpis. Sed fringilla, massa eget luctus malesuada, metus eros molestie lectus, ut tempus eros massa ut dolor.
-                                    #tabs-3
-                                        p Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem.
-                            table.venue-events
-                                thead
-                                    td.nowShow.active
-                                        a(href="javascript:;").lnkNow Now Showing
-                                    td(colspan="2").upcomingShow
-                                        a(href="javascript:;").lnkUpcoming Upcoming Shows
-                                tfoot
-                                    tr
-                                tbody
-                                    tr
-                                        td.dates Dec 12, 2014 Friday @ 9:30
-                                        td.imgTable
-                                            img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", alt="Masterclass", width="71", height="48")
-                                        td.mclass
-                                            h3.txtBlue Masterclass
-                                        td.buyTicks
-                                            a(href="javascript:;").btn.bgOrange Buy Tickets
-                                    tr
-                                        td.dates Dec 12, 2014 Friday @ 9:30
-                                        td.imgTable
-                                            img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", alt="Masterclass", width="71", height="48")
-                                        td.mclass
-                                            h3.txtBlue Masterclass
-                                        td.buyTicks
-                                            a(href="javascript:;").btn.bgOrange Buy Tickets
-                                    tr
-                                        td.dates Dec 12, 2014 Friday @ 9:30
-                                        td.imgTable
-                                            img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", alt="Masterclass", width="71", height="48")
-                                        td.mclass
-                                            h3.txtBlue Masterclass
-                                        td.buyTicks
-                                            a(href="javascript:;").btn.bgOrange Buy Tickets
-                                    tr
-                                        td.dates Dec 12, 2014 Friday @ 9:30
-                                        td.imgTable
-                                            img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", alt="Masterclass", width="71", height="48")
-                                        td.mclass
-                                            h3.txtBlue Masterclass
-                                        td.buyTicks
-                                            a(href="javascript:;").btn.bgOrange Buy Tickets
-                                    tr
-                                        td.dates Dec 12, 2014 Friday @ 9:30
-                                        td.imgTable
-                                            img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", alt="Masterclass", width="71", height="48")
-                                        td.mclass
-                                            h3.txtBlue Masterclass
-                                        td.buyTicks
-                                            a(href="javascript:;").btn.bgOrange Buy Tickets
-                            .ctn360view
-                                h3 Vista 360º
-                                .streetview
-                                h3.mt17 About Venue name
-                                p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                                .ctnDescription.row
-                                    ul.txtBlue
-                                        li Venue capacity:
-                                        li Administrator:
-                                        li Contact Information:
-                                    ul
-                                        li 4000 persones
-                                        li Showbizz S.A.
-                                        li contacto@showbizz.com
+                                            a(href="javascript:;")
+                                                img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", width="140", height="196")
+                                                .event-information
+                                                    h3.txtBlue Title of events
+                                                    span 2009
+                                        li
+                                            a(href="javascript:;")
+                                                img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", width="140", height="196")
+                                                .event-information
+                                                    h3.txtBlue Title of events
+                                                    span 2009
+                                        li
+                                            a(href="javascript:;")
+                                                img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", width="140", height="196")
+                                                .event-information
+                                                    h3.txtBlue Title of events
+                                                    span 2009
+                                        
