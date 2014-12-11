@@ -28,9 +28,15 @@ block content
 					|	foreach ($this->venues as $key => $value) { ?>
 					option(value!="<?php echo $value['id']; ?>") <?php echo $value['nombre']; ?>
 					<?php }}?>
-				input(id="day",name="day",placeholder="day")
-				input(id="from",name="from",placeholder="From")
-				input(id="to",name="to",placeholder="To")
+				.box-input
+					input(id="day",name="day",placeholder="day")
+					i.sprite.icCboicon2
+				.box-input
+					input(id="from",name="from",placeholder="From")
+					i.sprite.icCboicon2
+				.box-input
+					input(id="to",name="to",placeholder="To")
+					i.sprite.icCboicon2
 				button(id="buscar-fecha") SEARCH
 	.menu-categorias
 		ul.listado-categorias
