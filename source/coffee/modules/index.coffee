@@ -171,10 +171,18 @@ yOSON.AppCore.addModule "index", ((Sb) ->
 		dom.picker.datepicker
 			altField: "#from"
 			altFormat: "yy-mm-dd"
+			changeMonth: true
+			onClose: (selectedDate) ->
+				$(".fecha2").datepicker "option", "minDate", selectedDate
+				return
 	calenSearch2= ()->
 		dom.picker2.datepicker
 			altField: "#to"
 			altFormat: "yy-mm-dd"
+			changeMonth: true
+			onClose: (selectedDate) ->
+				$(".fecha1").datepicker "option", "maxDate", selectedDate
+				return
 	bindEvents= ()->
 		declareTable()
 		calenSearch()
