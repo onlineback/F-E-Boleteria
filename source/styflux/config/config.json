@@ -17,7 +17,7 @@
 					"plugins":["jqChosen.styl","jqFancybox.styl","jqTinyscrollbar.styl","jqUI.styl","jqDatepicker.styl","[@ult]uLoader.styl","[@ult]uTipsy.styl","[@ult]uAlertModal.styl","[@ult]jqOwlCarousel.styl"]
 				},
 				"includes":{
-					"vhelpers":["buttons.styl","forms.styl","fonts.styl","fontCoomuna.styl","content.styl","sprites.styl","resources.styl","responsive.styl"],
+					"vhelpers":["buttons.styl","forms.styl","fonts.styl","fontCoomuna.styl","content.styl","sprites.styl","resources.styl","responsive.styl","bxslider.styl"],
 					"layout":["[@pp]header.styl","[@pp]general.styl","[@pp]home.styl","[@pp]footer.styl"],
 					"imports":["resultados.styl","noticias.styl","evento.styl","contacto.styl","local.styl","seller.styl"]
 				}

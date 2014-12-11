@@ -10,7 +10,12 @@ block content
             .sidebar-info.row
                 .imgCtn
                     img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg")
-                p.redes-evento redes
+                #fb-root
+                .redes-evento
+                    .fb-like(data-href="https://developers.facebook.com/docs/plugins/",data-layout="button_count",data-action="like",data-show-faces="true",data-share="false")
+                .redes-evento-twitter
+                    a(href="https://twitter.com/share",class="twitter-share-button") Tweet
+                .clear
                 .lista-evento
                     ul
                         li
@@ -60,22 +65,52 @@ block content
                         a(href="#tabs-1" ,class="btnticket") Buy Tickets
                     .slider-imagenes.row
                         .slider-imagen
-                            img(src!="<?php echo STATIC_URL ?>/img/img-prueba/slide1.jpg")
-                        .miniaturas
-                            img(src!="<?php echo STATIC_URL ?>/img/img-prueba/thumb1.jpg")
-                            img(src!="<?php echo STATIC_URL ?>/img/img-prueba/thumb2.jpg")
-                            img(src!="<?php echo STATIC_URL ?>/img/img-prueba/thumb3.jpg")
-                            img(src!="<?php echo STATIC_URL ?>/img/img-prueba/thumb4.jpg")
-                            img(src!="<?php echo STATIC_URL ?>/img/img-prueba/thumb5.jpg",class="nomargin")
+                            ul.bxslider
+                                li
+                                    img(src!="<?php echo STATIC_URL ?>/img/img-prueba/slide1.jpg")
+                                li
+                                    img(src!="<?php echo STATIC_URL ?>/img/img-prueba/slide1.jpg")
+                                li
+                                    img(src!="<?php echo STATIC_URL ?>/img/img-prueba/slide1.jpg")
+                                li
+                                    img(src!="<?php echo STATIC_URL ?>/img/img-prueba/slide1.jpg")
+                                li
+                                    img(src!="<?php echo STATIC_URL ?>/img/img-prueba/slide1.jpg")
+
+                        .miniaturas#bx-pager
+                            a(href="" , data-slide-index="0")
+                                img(src!="<?php echo STATIC_URL ?>/img/img-prueba/thumb1.jpg")
+                            a(href="" , data-slide-index="1")
+                                img(src!="<?php echo STATIC_URL ?>/img/img-prueba/thumb2.jpg")
+                            a(href="" , data-slide-index="2")
+                                img(src!="<?php echo STATIC_URL ?>/img/img-prueba/thumb3.jpg")
+                            a(href="" , data-slide-index="3")
+                                img(src!="<?php echo STATIC_URL ?>/img/img-prueba/thumb4.jpg")
+                            a(href="" , data-slide-index="4")
+                                img(src!="<?php echo STATIC_URL ?>/img/img-prueba/thumb5.jpg",class="nomargin")
                     .videos.row
-                        .video-principal
-                            img(src!="<?php echo STATIC_URL ?>/img/img-prueba/video1.jpg")
-                        .miniaturas
-                            img(src!="<?php echo STATIC_URL ?>/img/img-prueba/thumb1.jpg")
-                            img(src!="<?php echo STATIC_URL ?>/img/img-prueba/thumb2.jpg")
-                            img(src!="<?php echo STATIC_URL ?>/img/img-prueba/thumb3.jpg")
-                            img(src!="<?php echo STATIC_URL ?>/img/img-prueba/thumb4.jpg")
-                            img(src!="<?php echo STATIC_URL ?>/img/img-prueba/thumb5.jpg",class="nomargin")
+                        ul.video-principal
+                            li
+                                iframe(src="//www.youtube.com/embed/3s9sH82rHjI",width="640",height="360",frameborder="0",allowfullscreen="true")
+                            //li
+                                iframe(src="//www.youtube.com/embed/3DAIgaOb-Ig",width="640",height="360",frameborder="0",allowfullscreen="true")
+                            //li
+                                iframe(src="//www.youtube.com/embed/NsyP2NkE2G0",width="640",height="360",frameborder="0",allowfullscreen="true")
+                            //li
+                                iframe(src="//www.youtube.com/embed/94xvfWpuEWM",width="640",height="360",frameborder="0",allowfullscreen="true")
+                            //li
+                                iframe(src="//www.youtube.com/embed/Jbmf_O8Mul8",width="640",height="360",frameborder="0",allowfullscreen="true")
+                        .miniaturas#videomini
+                            a(href="" , data-slide-index="0")
+                                img(src!="http://img.youtube.com/vi/3s9sH82rHjI/1.jpg")
+                            a(href="" , data-slide-index="1")
+                                img(src!="http://img.youtube.com/vi/3DAIgaOb-Ig/1.jpg")
+                            a(href="" , data-slide-index="2")
+                                img(src!="http://img.youtube.com/vi/NsyP2NkE2G0/1.jpg")
+                            a(href="" , data-slide-index="3")
+                                img(src!="http://img.youtube.com/vi/94xvfWpuEWM/1.jpg")
+                            a(href="" , data-slide-index="4")
+                                img(src!="http://img.youtube.com/vi/Jbmf_O8Mul8/1.jpg",class="nomargin")
             .pasarela
                 img(src!="<?php echo STATIC_URL ?>/img/pasarela.png")
                 a(href="#tabs-1" ,class="btnticket mini-btn") Buy Tickets
@@ -83,3 +118,5 @@ block content
                 form
                     input(type="text",name="evento-suscribir", id="evento-suscribir",placeholder="Enter Your Email")
                     button Subscribe
+            .clear
+

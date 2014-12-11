@@ -23,6 +23,7 @@ yOSON.AppSchema.modules=
 						'index' : ->
 							yOSON.AppCore.runModule 'mapa'
 							yOSON.AppCore.runModule 'detalleEvento'
+							yOSON.AppCore.runModule 'sliderimagen'
 						'byDefault': ->
 					allActions: ->
 			byDefault : ->
