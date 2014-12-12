@@ -11,8 +11,10 @@
         '../source/application/modules/default/views/scripts/eventos/index.phtml': pathJade + 'eventos.jade',
         '../source/application/modules/default/views/scripts/eventos/resultados.phtml': pathJade + 'resultados.jade',
         '../source/application/modules/default/views/scripts/contacto/index.phtml': pathJade + 'contacto.jade',
+        '../source/application/modules/default/views/scripts/terminos-condiciones/index.phtml': pathJade + 'terminos.jade',
+        '../source/application/modules/default/views/scripts/politica-privacidad/index.phtml': pathJade + 'condiciones.jade',
         '../source/application/modules/default/views/scripts/venue/index.phtml': pathJade + 'local.jade',
-        '../source/application/modules/default/views/scripts/seller/index.phtml': pathJade + 'seller.jade',
+        '../source/application/modules/default/views/scripts/seller/index.phtml': pathJade + 'seller.jade'
         //'../resource/index.html': pathJade + 'index.jade',
         //'../resource/noticias.html': pathJade + 'noticia.jade',
         //'../resource/detalle-noticias.html': pathJade + 'detalle-noticia.jade',
