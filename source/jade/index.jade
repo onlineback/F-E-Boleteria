@@ -80,7 +80,7 @@ block content
 				<?php $styles .= '.tag'.$value['id'].':after {position:absolute; border-color: '.$value['evento_tag_coloroscuro'].' '.$value['evento_tag_coloroscuro'].' transparent transparent;border-style: solid;border-width: 5px 10px;content: " ";height: 0;left: 0;top: 100%;width: 0;} .tag'.$value['id'].' {background-color: '.$value['evento_tag_color'].';color: #fff;font-size: 16px;font-weight: bold;left: -20px;min-width: 12%;padding: 8px 24px;position: absolute;text-transform: uppercase;top: 23px;} ';?>
 				div(class!="tag<?php echo $value['id']; ?>") <?php echo $value['evento_tag_nametag']; ?>
 				<?php } ?>
-				img(src!="<?php echo DINAMIC_URL ?>/eventos/banner/<?php echo $value['evento_contenido_imagenprincipal']; ?>",class="img-responsive")
+				img(src!="<?php echo DINAMIC_URL ?>/eventos/banner/home/<?php echo $value['evento_contenido_imagenprincipal']; ?>",class="img-responsive")
 				.subtitulo
 					p(style!="background: none repeat scroll 0 0 <?php echo $value['categoria_color']; ?>;")
 						img(onerror!="this.onerror=null; this.src='<?php echo STATIC_URL . '/img/categorias/exposicion.png'; ?>';",src!="<?php echo DINAMIC_URL ?>/categoria/icono/<?php echo $value['categoria_icono']; ?>" ,class="img-subtitulo")
@@ -101,91 +101,6 @@ block content
 						a(href="javascript:;",class="comprar-entradas") COMPRAR ENTRADAS
 			<?php }}?>
 			<?php $this->headStyle()->appendStyle($styles);?>
-			.box
-				.ribbon new
-				img(src!="<?php echo STATIC_URL ?>/img/img-prueba/img1.jpg",class="img-responsive")
-				.subtitulo
-					p.categoria2
-						img(src!="<?php echo STATIC_URL ?>/img/categorias/teatro.png" ,class="img-subtitulo")
-						span teatro
-					a(href="javascript:;",class="social-box")
-						i.sprite.icFacebook
-					a(href="javascript:;",class="social-box")
-						i.sprite.icTwitter
-
-				.clear
-				.contenido-box
-					p
-						strong	Lorem Ipsum Dolor Sit
-					p.espacio-box
-						i.sprite.icCboicon2.icono-fecha
-						span Nov 10-11, 8pm onwards
-					p.text-box Aeorem Ipum Dolor Sit Amet Magna Elita. Lorem Ipsum Elitm.Dolor Sit Amet Magna Elitam vestibulumty. MAgna parispatis
-					p
-						a(href="javascript:;",class="comprar-entradas") COMPRAR ENTRADAS
-			.box
-				.ribbon new
-				img(src!="<?php echo STATIC_URL ?>/img/img-prueba/img5.jpg",class="img-responsive")
-				.subtitulo
-					p.categoria5
-						img(src!="<?php echo STATIC_URL ?>/img/categorias/musica.png" ,class="img-subtitulo")
-						span MÚSICA
-					a(href="javascript:;",class="social-box")
-						i.sprite.icFacebook
-					a(href="javascript:;",class="social-box")
-						i.sprite.icTwitter
-
-				.clear
-				.contenido-box
-					p
-						strong Lorem Ipsum Dolor Sit
-					p.espacio-box
-						i.sprite.icCboicon2.icono-fecha
-						span Nov 10-11, 8pm onwards
-					p.text-box Aeorem Ipum Dolor Sit Amet Magna Elita. Lorem Ipsum Elitm.Dolor Sit Amet Magna Elitam vestibulumty. MAgna parispatis
-					p
-						a(href="javascript:;",class="comprar-entradas") COMPRAR ENTRADAS
-			.box
-				.ribbon new
-				img(src!="<?php echo STATIC_URL ?>/img/img-prueba/img6.jpg",class="img-responsive")
-				.subtitulo
-					p.categoria4
-						img(src!="<?php echo STATIC_URL ?>/img/categorias/educacion.png" ,class="img-subtitulo")
-						span EDUCACIÓN
-					a(href="javascript:;",class="social-box")
-						i.sprite.icFacebook
-					a(href="javascript:;",class="social-box")
-						i.sprite.icTwitter
-
-				.clear
-				.contenido-box
-					p
-						strong	Lorem Ipsum Dolor Sit
-					p.espacio-box
-						i.sprite.icCboicon2.icono-fecha
-						span Nov 10-11, 8pm onwards
-					p.text-box Aeorem Ipum Dolor Sit Amet Magna Elita. Lorem Ipsum Elitm.Dolor Sit Amet Magna Elitam vestibulumty. MAgna parispatis
-					p
-						a(href="javascript:;",class="comprar-entradas") COMPRAR ENTRADAS
-			.box
-				img(src!="<?php echo STATIC_URL ?>/img/img-prueba/img4.jpg",class="img-responsive")
-				.subtitulo
-					p.categoria6 EXPOSICIÓN
-					a(href="javascript:;",class="social-box")
-						i.sprite.icFacebook
-					a(href="javascript:;",class="social-box")
-						i.sprite.icTwitter
-
-				.clear
-				.contenido-box
-					p
-						strong	Lorem Ipsum Dolor Sit
-					p.espacio-box
-						i.sprite.icCboicon2.icono-fecha
-						span Nov 10-11, 8pm onwards
-					p.text-box Aeorem Ipum Dolor Sit Amet Magna Elita. Lorem Ipsum Elitm.Dolor Sit Amet Magna Elitam vestibulumty. MAgna parispatis
-					p
-						a(href="javascript:;",class="comprar-entradas") COMPRAR ENTRADAS
 			.box
 				img(src!="<?php echo STATIC_URL ?>/img/img-prueba/img3.jpg",class="img-responsive")
 				.subtitulo
