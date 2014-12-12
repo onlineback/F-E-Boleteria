@@ -7,11 +7,20 @@ yOSON.AppSchema.modules=
 						yOSON.AppCore.runModule 'index'
 					'byDefault': ->
 				allActions: ->
+			'contacto':
+					actions :
+						'index' : ->
+							yOSON.AppCore.runModule 'validation',{'form':'#formcontacto'}
+						'byDefault': ->
+					allActions: ->
 			'noticias':
 				actions :
 					'index' : ->
 						yOSON.AppCore.runModule 'noticia'
 					'byDefault': ->
+					'detalle' : ->
+						yOSON.AppCore.runModule 'noticia'
+						'byDefault': ->
 				allActions: ->
 			'eventos':
 					actions :
@@ -20,6 +29,9 @@ yOSON.AppSchema.modules=
 							yOSON.AppCore.runModule 'evento'
 							yOSON.AppCore.runModule 'galleryChanges'
 							yOSON.AppCore.runModule 'generateSocial'
+						'byDefault': ->
+						'resultados' : ->
+							yOSON.AppCore.runModule 'resultados'
 						'byDefault': ->
 					allActions: ->
 			'venue':
