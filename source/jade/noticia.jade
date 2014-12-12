@@ -2,16 +2,19 @@
 block content
     .container-noticias
         section.contenido-noticias
+            <?php if(count($this->noticias)>0){
+            |   foreach ($this->noticias as $key => $value) { ?>
             article
-                h2 Group add new venues for “Tour 2015”
-                img(src!="<?php echo STATIC_URL ?>/img/img-prueba/noticia.jpg")
+                h2 <?php echo $value['titulo']; ?>
+                img(src!="<?php echo DINAMIC_URL ?>/noticias/<?php echo $value['imagenPrincipal']; ?>")
                 .redes-sociales redes
                 .descripcion
-                    strong Posted by Kevin Berger on October 27, 2014
-                    p  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquiex ea commodo consequat...
+                    strong Date <?php echo date('M d, Y',strtotime($value['fechaInicioPublicacion'])); ?>
+                    p  <?php echo strlen($value['contenido'])>230?substr($value['contenido'],0, 230).'...':$value['contenido']; ?>
                 .ver-noticia
                     a(href="javascript:;") Read More
                 .clear
+            <?php }} ?>
             article
                 h2 Group add new venues for “Tour 2015”
                 img(src!="<?php echo STATIC_URL ?>/img/img-prueba/noticia.jpg")
@@ -26,22 +29,14 @@ block content
                 a(href="javascript:;") < Noticias anteriores
         .fechas-noticias
             .fechas
+                <?php if(count($this->fechas)>0){ ?>
                 p Fecha
                 ul
+                    <?php   foreach ($this->fechas as $key => $value) { ?>
                     li
-                        a(href="javascript:;" , class="active") November 2014
-                    li
-                        a(href="javascript:;") Octuber 2014
-                    li
-                        a(href="javascript:;") September 2014
-                    li
-                        a(href="javascript:;") August 2014
-                    li
-                        a(href="javascript:;") July 2014
-                    li
-                        a(href="javascript:;") June 2014
-                    li
-                        a(href="javascript:;") May 2014
+                        a(href="javascript:;" , class!="<?php echo date('Y-m',strtotime($value['fechaInicioPublicacion']))==$this->mesActual?'active':''; ?>") <?php echo date('F Y',strtotime($value['fechaInicioPublicacion'])); ?>
+                    <?php } ?>
+                <?php } ?>
 
     .clear
 
