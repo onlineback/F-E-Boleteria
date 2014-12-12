@@ -22,7 +22,7 @@ block content
                 .clear
             <?php }} ?>
             .noticias-pasadas
-                a(href="javascript:;") < Noticias anteriores
+                <?php echo $this->paginationControl($this->noticias,'Sliding','noticias/paginator.phtml',array('fecha'=>$this->mesActual)); ?>
         .fechas-noticias
             .fechas
                 <?php if(count($this->fechas)>0){ ?>
