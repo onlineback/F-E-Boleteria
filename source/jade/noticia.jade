@@ -1,4 +1,3 @@
-
 block content
     .container-noticias
         section.contenido-noticias
@@ -8,7 +7,7 @@ block content
                 h2 <?php echo $value['titulo']; ?>
                 img(src!="<?php echo DINAMIC_URL ?>/noticias/<?php echo $value['imagenPrincipal']; ?>")
                 .redes-noticias
-                    .fb-like(data-href="https://developers.facebook.com/docs/plugins/",data-layout="button",data-action="like",data-show-faces="true",data-share="false")
+                    a(href!="http://www.facebook.com/sharer.php?s=100&p[url]=<?php echo BASE_URL ?>?s=100&p[title]=Conoce+a+Developando&p[images][0]=http://developando.com/images/developandoLogo.jpeg&p[summary]=Desarrollo+web+y+movil").fbShare
                 .redes-google
                     | <g:plusone size="medium"></g:plusone>
                 .redes-noticias-twitter
