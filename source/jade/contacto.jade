@@ -1,13 +1,13 @@
 
 block content
-    .imagen-principal
+    .imagen-principal-interno
         img(src!="<?php echo STATIC_URL ?>/img/img-prueba/contacto.jpg")
     .contenido-contacto
         h2 Contacto
         .columna1
             p Si desea contactarse con nosotros, por favor  llene con sus datos los campos de la parte inerior, nosotros contestaremos a la brevedad posible. Gracias
-            form
-                input(type="text",id="nombre",name="nombre",placeholder="Nombres")
+            form(id="formcontacto")
+                input(type="text",id="nombre",name="nombre",placeholder="Nombres",class="place")
                 input(type="text",id="apellidos",name="apellidos",placeholder="Apellidos")
                 input(type="email",id="correo",name="correo",placeholder="Correo")
                 textarea(id="mensaje",name="mensaje",col=10)

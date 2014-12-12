@@ -157,10 +157,11 @@ yOSON.AppCore.addModule "index", ((Sb) ->
 		"slider": ".contenido-slider"
 		"picker":".fecha1"
 		"picker2":".fecha2"
+		"event":".container-eventos"
 	dom= {}
 	mainTable= {}
 	catchDom= ()->
-		dom.mapa= $(st.mapa)
+		dom.event= $(st.event)
 		dom.picker= $(st.picker)
 		dom.picker2= $(st.picker2)
 	declareTable= ()->
@@ -183,15 +184,21 @@ yOSON.AppCore.addModule "index", ((Sb) ->
 			onClose: (selectedDate) ->
 				$(".fecha1").datepicker "option", "maxDate", selectedDate
 				return
+	inicio=()->
+		$container = dom.event
+		$container.masonry
+			gutter: 10
+			itemSelector: ".box"
 	bindEvents= ()->
 		declareTable()
 		calenSearch()
 		calenSearch2()
+		inicio()
 	init: (oParams) ->
 		catchDom()
 		bindEvents()
 
-),["plugins/jquery.bxslider.min.js","plugins/jqUI.js"]
+),["plugins/jquery.bxslider.min.js","plugins/jqUI.js","plugins/masonry.js"]
 
 #-----------------------------------------------------------------------------------------------
 # @Module: mapa
