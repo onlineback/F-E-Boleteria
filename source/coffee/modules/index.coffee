@@ -189,11 +189,39 @@ yOSON.AppCore.addModule "index", ((Sb) ->
 		$container.masonry
 			gutter: 10
 			itemSelector: ".box"
+	combo1=()->
+		$("select#category").each ->
+			title = "What Are You Looking For"
+			title = $("option:selected", this).text()  unless $("option:selected", this).val() is ""
+			$(this).css(
+				"z-index": 10
+				opacity: 0
+				"-khtml-appearance": "none"
+			).before("<span class=\"select1\">" + title + "</span>").change ->
+				val = $("option:selected", this).text()
+				$(this).prev().text val
+				return
+		return
+	combo2=()->
+		$("select#venue").each ->
+			title = "Where"
+			title = $("option:selected", this).text()  unless $("option:selected", this).val() is ""
+			$(this).css(
+				"z-index": 10
+				opacity: 0
+				"-khtml-appearance": "none"
+			).before("<span class=\"select2\">" + title + "</span>").change ->
+				val = $("option:selected", this).text()
+				$(this).prev().text val
+				return
+			return
 	bindEvents= ()->
 		declareTable()
 		calenSearch()
 		calenSearch2()
 		inicio()
+		combo1()
+		combo2()
 	init: (oParams) ->
 		catchDom()
 		bindEvents()

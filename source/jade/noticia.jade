@@ -33,6 +33,5 @@ block content
                         a(href!="<?php echo $this->url(array('date'=>date('Y-m',strtotime($value['fechaInicioPublicacion']))),'noticias'); ?>" , class!="<?php echo date('Y-m',strtotime($value['fechaInicioPublicacion']))==$this->mesActual?'active':''; ?>") <?php echo date('F Y',strtotime($value['fechaInicioPublicacion'])); ?>
                     <?php } ?>
                 <?php } ?>
-
     .clear
 
