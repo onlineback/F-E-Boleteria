@@ -15,113 +15,115 @@ block content
                                 //img(src!="<?php echo STATIC_URL ?>/img/img-prueba/sombra.png",class="sombra")
                             a(href="javascript:;").web-seller livenation.com
                             ul.ctnSocialMedia
+                                <?php if(!empty($this->dataSeller['facebook'])):?>
                                 li
                                     a(href="javascript:;")
                                         i.isprite.icFacebookcontacto
-                                        | livenation.facebook
+                                        | <?php echo $this->dataSeller['facebook']?>
+                                <?php endif;?>
+                                <?php if(!empty($this->dataSeller['twitter'])):?>
                                 li
                                     a(href="javascript:;")
                                         i.isprite.icTwittercontacto
-                                        | @livenation.twitter
+                                        | <?php echo $this->dataSeller['twitter']?>
+                                <?php endif;?> 
+                                <?php if(!empty($this->dataSeller['youtube'])):?>
                                 li
                                     a(href="javascript:;")
                                         i.isprite.icYoutubecontacto
-                                        | /livenation.youtube
-                                li
-                                    a(href="javascript:;")
-                                        i.isprite.icGooglecontacto
-                                        | livenation.google
+                                        | <?php echo $this->dataSeller['youtube']?>
+                                <?php endif;?>
                         .page-ctn
                             .seller-information
-                                h3.txtBlue Seller's Information
-                                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Noster sapiente honestum inpendente aetatis succumbere melius consistat erat efficeret, erroribus dicant factorum reperire, theophrasti odit multitudinem arte audeam, inquam, incommoda stabilitas quamvis maximasque necessitatibus. Multo salutandi vivi nec silano praesenti tantopere optimus retinere. Manum facillime exercendi, elegantis honeste appellantur facerem succumbere consulatu aliquid sapienti aliter quod, postremo artifex praesentium, temperantia eruditi videor neglegit renovata credere necessarius aliquod conciliant erroribus, everti clarorum fabulas nostras conscientia geometriaque. Gravitate pecuniae ponderum perfruique deserere statuerunt.
-                                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Noster sapiente honestum inpendente aetatis succumbere melius consistat erat efficeret, erroribus dicant factorum reperire, theophrasti odit multitudinem arte audeam, inquam, incommoda stabilitas quamvis maximasque necessitatibus. Multo salutandi vivi nec silano praesenti tantopere optimus retinere. Manum facillime exercendi, elegantis honeste appellantur facerem succumbere consulatu aliquid sapienti aliter quod, postremo artifex praesentium, temperantia eruditi videor neglegit renovata credere necessarius aliquod conciliant erroribus, everti clarorum fabulas nostras conscientia geometriaque. Gravitate pecuniae ponderum perfruique deserere statuerunt.
+                                h3.txtBlue 
+                                    <?php echo $this->dataSeller['nombre']?>
+                                p <?php echo $this->dataSeller['descripcion']?>
                                 p.contact-info.txtBlue
                                     i.isprite.icMail
                                     | Contacto: 
-                                    a(href="mailto:webmaster@example.com").txtBlue contacto@livenation.com
+                                    a(href!="mailto:<?php echo $this->dataSeller['email']?>").txtBlue <?php echo $this->dataSeller['email']?>
                             .show-detail-block.row.nowShowing
                                 .title
                                     .tab-title
                                         i.isprite.icStar
-                                        | Now showing
+                                        | Now showing                                             
                                 .cnt-detail.row
+                                    <?php if(!empty($this->dataEvento['now'])):?>
+                                    <?php foreach($this->dataEvento['now'] AS $value):?>
                                     .imgCtn
-                                        img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", width="140", height="196")
+                                        img(src!="<?php echo DINAMIC_URL ?>/eventos/<?php echo $value['imagenPrincipal']?>", width="140", height="196")
                                     .information
-                                        h3.txtBlue Title of Event
-                                        p Lorem ipsum Dolore culpa velit sit Excepteur in ea in quis sint qui proident proident anim ea.
+                                        h3.txtBlue 
+                                            <?php echo $value['titulo']?>
+                                        p 
+                                            <?php  echo $value['descripcionCorta']?>
                                         ul.more-information
                                             li
                                                 i.isprite.icHora
-                                                | From Thursday to Monday, 8pm. Sundays on 7pm.
+                                                | <?php echo $value['fechaInicioPublicacion']?>
                                             li
                                                 i.isprite.icPrecio
-                                                | Price range: $20 - $50
+                                                | Rango de precio: <?php echo $value['signoMoneda'].' '.$value['precioMinimo'].' - '.$value['signoMoneda'].' '.$value['precioMaximo']?>
                                             li
                                                 i.isprite.icLugar
-                                                | Teatro Rollys at Miraflores
+                                                | <?php echo $value['nombre'].' '.$value['ciudad']?>
                                         a(href="javascript:;").btn.bgOrange Buy Tickets
+                                    hr
+                                    <?php endforeach?>    
+                                    <?php else:?>
+                                    p No hay eventos disponibles
+                                    <?php endif;?>
                             hr
                             .show-detail-block.row.comingSoon
                                 .title
                                     .tab-title
-                                        i.isprite.icCalendar
-                                        | Coming soon
+                                        i.isprite.icStar
+                                        | Now showing                                             
                                 .cnt-detail.row
+                                    <?php if(!empty($this->dataEvento['comming'])):?>
+                                    <?php foreach($this->dataEvento['comming'] AS $value):?>
                                     .imgCtn
-                                        img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", width="140", height="196")
+                                        img(src!="<?php echo DINAMIC_URL ?>/eventos/<?php echo $value['imagenPrincipal']?>", width="140", height="196")
                                     .information
-                                        h3.txtBlue Title of Event
-                                        p Lorem ipsum Dolore culpa velit sit Excepteur in ea in quis sint qui proident proident anim ea.
+                                        h3.txtBlue 
+                                            <?php echo $value['titulo']?>
+                                        p 
+                                            <?php  echo $value['descripcionCorta']?>
                                         ul.more-information
                                             li
                                                 i.isprite.icHora
-                                                | From Thursday to Monday, 8pm. Sundays on 7pm.
+                                                | <?php echo $value['fechaInicioPublicacion']?>
                                             li
                                                 i.isprite.icPrecio
-                                                | Price range: $20 - $50
+                                                | Rango de precio: <?php echo $value['signoMoneda'].' '.$value['precioMinimo'].' - '.$value['signoMoneda'].' '.$value['precioMaximo']?>
                                             li
                                                 i.isprite.icLugar
-                                                | Teatro Rollys at Miraflores
+                                                | <?php echo $value['nombre'].' '.$value['ciudad']?>
                                         a(href="javascript:;").btn.bgOrange Buy Tickets
+                                    hr
+                                    <?php endforeach?>    
+                                    <?php else:?>
+                                    p No hay eventos disponibles
+                                    <?php endif;?>
                             hr
                             .show-detail-block.row.past-events
                                 .title
-                                    a(href="javascript:;").seeThemAll See them all
+                                    a(href="javascript:;").seeThemAll 
                                     .tab-title
                                         i.isprite.icStar
                                         | Past events
                                 .cnt-detail.row
+                                    <?php if(!empty($this->dataEvento['past'])):?>
                                     ul.list-events
-                                        li
+                                        <?php foreach($this->dataEvento['past'] AS $value):?>
+                                        li                                           
                                             a(href="javascript:;")
-                                                img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", width="140", height="196")
+                                                img(src!="<?php echo DINAMIC_URL ?>/eventos/<?php echo $value['imagenPrincipal']?>", width="140", height="196")
                                                 .event-information
-                                                    h3.txtBlue Title of events
-                                                    span 2009
-                                        li
-                                            a(href="javascript:;")
-                                                img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", width="140", height="196")
-                                                .event-information
-                                                    h3.txtBlue Title of events
-                                                    span 2009
-                                        li
-                                            a(href="javascript:;")
-                                                img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", width="140", height="196")
-                                                .event-information
-                                                    h3.txtBlue Title of events
-                                                    span 2009
-                                        li
-                                            a(href="javascript:;")
-                                                img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", width="140", height="196")
-                                                .event-information
-                                                    h3.txtBlue Title of events
-                                                    span 2009
-                                        li
-                                            a(href="javascript:;")
-                                                img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", width="140", height="196")
-                                                .event-information
-                                                    h3.txtBlue Title of events
-                                                    span 2009
+                                                    h3.txtBlue 
+                                                        <?php echo $value['titulo']?>
+                                                    span 
+                                                        <?php echo $value['fechaInicioPublicacion']?>
+                                        <?php endforeach?>     
+                                    <?php endif;?>
                                         
