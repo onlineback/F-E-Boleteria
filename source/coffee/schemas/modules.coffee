@@ -12,6 +12,9 @@ yOSON.AppSchema.modules=
 					'index' : ->
 						yOSON.AppCore.runModule 'noticia'
 					'byDefault': ->
+					'detalle' : ->
+						yOSON.AppCore.runModule 'noticia'
+						'byDefault': ->
 				allActions: ->
 			'eventos':
 					actions :

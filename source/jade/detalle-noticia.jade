@@ -5,7 +5,13 @@ block content
             article
                 h2 Group add new venues for “Tour 2015”
                 img(src!="<?php echo STATIC_URL ?>/img/img-prueba/noticia.jpg")
-                .redes-sociales redes
+                .redes-noticias
+                    .fb-like(data-href="https://developers.facebook.com/docs/plugins/",data-layout="button",data-action="like",data-show-faces="true",data-share="false")
+                .redes-google
+                    | <g:plusone size="medium"></g:plusone>
+                .redes-noticias-twitter
+                    a(href="https://twitter.com/share",class="twitter-share-button") Tweet
+                .clear
                 .descripcion
                     strong Posted by Kevin Berger on October 27, 2014
                     p  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquiex ea commodo consequat
