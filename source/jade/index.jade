@@ -1,7 +1,8 @@
 block content
 	Header
 		h1
-			img(src!="<?php echo STATIC_URL ?>/img/logo.png")
+			a(href!="<?php echo BASE_URL ?>")
+				img(src!="<?php echo STATIC_URL ?>/img/logo.png")
 		nav.menu-home
 			ul
 				li
@@ -102,7 +103,99 @@ block content
 			<?php }}?>
 			<?php $this->headStyle()->appendStyle($styles);?>
 			.box
-				img(src!="<?php echo STATIC_URL ?>/img/img-prueba/img3.jpg",class="img-responsive")
+				.ribbon new
+				img(src!="<?php echo STATIC_URL ?>/img/img-prueba/img1.jpg",class="img-responsive")
+				.subtitulo
+					p.categoria2
+						img(src!="<?php echo STATIC_URL ?>/img/categorias/teatro.png" ,class="img-subtitulo")
+						span teatro
+					a(href="javascript:;",class="social-box")
+						i.sprite.icFacebook
+					a(href="javascript:;",class="social-box")
+						i.sprite.icTwitter
+
+				.clear
+				.contenido-box
+					p
+						strong	Lorem Ipsum Dolor Sit
+					p.espacio-box
+						i.sprite.icCboicon2.icono-fecha
+						span Nov 10-11, 8pm onwards
+					p.text-box Aeorem Ipum Dolor Sit Amet Magna Elita. Lorem Ipsum Elitm.Dolor Sit Amet Magna Elitam vestibulumty. MAgna parispatis
+					p
+						a(href="javascript:;",class="comprar-entradas") COMPRAR ENTRADAS
+			.box
+				.ribbon new
+				a(href="javascript:;")
+					img(src!="<?php echo STATIC_URL ?>/img/img-prueba/img5.jpg",class="img-responsive")
+				.subtitulo
+					p.categoria5
+						img(src!="<?php echo STATIC_URL ?>/img/categorias/musica.png" ,class="img-subtitulo")
+						span MÚSICA
+					a(href="javascript:;",class="social-box")
+						i.sprite.icFacebook
+					a(href="javascript:;",class="social-box")
+						i.sprite.icTwitter
+
+				.clear
+				.contenido-box
+					p
+						a(href="javascript:;")
+							strong Lorem Ipsum Dolor Sit
+					p.espacio-box
+						i.sprite.icCboicon2.icono-fecha
+						span Nov 10-11, 8pm onwards
+					p.text-box Aeorem Ipum Dolor Sit Amet Magna Elita. Lorem Ipsum Elitm.Dolor Sit Amet Magna Elitam vestibulumty. MAgna parispatis
+					p
+						a(href="javascript:;",class="comprar-entradas") COMPRAR ENTRADAS
+			.box
+				.ribbon new
+				a(href="javascript:;")
+					img(src!="<?php echo STATIC_URL ?>/img/img-prueba/img6.jpg",class="img-responsive")
+				.subtitulo
+					p.categoria4
+						img(src!="<?php echo STATIC_URL ?>/img/categorias/educacion.png" ,class="img-subtitulo")
+						span EDUCACIÓN
+					a(href="javascript:;",class="social-box")
+						i.sprite.icFacebook
+					a(href="javascript:;",class="social-box")
+						i.sprite.icTwitter
+
+				.clear
+				.contenido-box
+					p
+						a(href="javascript:;")
+							strong	Lorem Ipsum Dolor Sit
+					p.espacio-box
+						i.sprite.icCboicon2.icono-fecha
+						span Nov 10-11, 8pm onwards
+					p.text-box Aeorem Ipum Dolor Sit Amet Magna Elita. Lorem Ipsum Elitm.Dolor Sit Amet Magna Elitam vestibulumty. MAgna parispatis
+					p
+						a(href="javascript:;",class="comprar-entradas") COMPRAR ENTRADAS
+			.box
+				a(href="javascript:;")
+					img(src!="<?php echo STATIC_URL ?>/img/img-prueba/img4.jpg",class="img-responsive")
+				.subtitulo
+					p.categoria6 EXPOSICIÓN
+					a(href="javascript:;",class="social-box")
+						i.sprite.icFacebook
+					a(href="javascript:;",class="social-box")
+						i.sprite.icTwitter
+
+				.clear
+				.contenido-box
+					p
+						a(href="javascript:;")
+							strong	Lorem Ipsum Dolor Sit
+					p.espacio-box
+						i.sprite.icCboicon2.icono-fecha
+						span Nov 10-11, 8pm onwards
+					p.text-box Aeorem Ipum Dolor Sit Amet Magna Elita. Lorem Ipsum Elitm.Dolor Sit Amet Magna Elitam vestibulumty. MAgna parispatis
+					p
+						a(href="javascript:;",class="comprar-entradas") COMPRAR ENTRADAS
+			.box
+				a(href="javascript:;")
+					img(src!="<?php echo STATIC_URL ?>/img/img-prueba/img3.jpg",class="img-responsive")
 				.subtitulo
 					p.categoria7 FREE-EVENTS
 					a(href="javascript:;",class="social-box")
@@ -112,8 +205,8 @@ block content
 
 				.clear
 			.box
-				img(src!="<?php echo STATIC_URL ?>/img/img-prueba/img2.jpg",class="img-responsive")
-
+				a(href="javascript:;")
+					img(src!="<?php echo STATIC_URL ?>/img/img-prueba/img2.jpg",class="img-responsive")
 				.subtitulo
 					p.categoria5 MÚSICA
 					a(href="javascript:;",class="social-box")
