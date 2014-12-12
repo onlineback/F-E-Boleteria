@@ -12,7 +12,8 @@ block content
                     img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg")
                 #fb-root
                 .redes-evento
-                    .fb-like(data-href="https://developers.facebook.com/docs/plugins/",data-layout="button_count",data-action="like",data-show-faces="true",data-share="false")
+                    a(href="http://www.facebook.com/sharer.php?s=100&p[url]=http://developando.com?s=100&p[title]=Conoce+a+Developando&p[images][0]=http://developando.com/images/developandoLogo.jpeg&p[summary]=Desarrollo+web+y+movil") Compartir FB
+                    //.fb-like(data-href="https://developers.facebook.com/docs/plugins/",data-layout="button_count",data-action="like",data-show-faces="true",data-share="false")
                 .redes-evento-twitter
                     a(href="https://twitter.com/share",class="twitter-share-button") Tweet
                 .clear
@@ -77,53 +78,47 @@ block content
                         a(href="#tabs-1" ,class="btnselect") Select  Best Available Seats
                         a(href="#tabs-1" ,class="btnticket") Buy Tickets
                     .slider-imagenes.row
-                        .slider-imagen
-                            ul.bxslider
-                                li
-                                    img(src!="<?php echo STATIC_URL ?>/img/img-prueba/slide1.jpg")
-                                li
-                                    img(src!="<?php echo STATIC_URL ?>/img/img-prueba/slide1.jpg")
-                                li
-                                    img(src!="<?php echo STATIC_URL ?>/img/img-prueba/slide1.jpg")
-                                li
-                                    img(src!="<?php echo STATIC_URL ?>/img/img-prueba/slide1.jpg")
-                                li
-                                    img(src!="<?php echo STATIC_URL ?>/img/img-prueba/slide1.jpg")
-
-                        .miniaturas#bx-pager
-                            a(href="" , data-slide-index="0")
+                        .slider-imagen.fl
+                            .innerCtn
+                                //img(src!="<?php echo STATIC_URL ?>/img/img-prueba/slide1.jpg").toReplace
+                                img(src="https://www.concertsquare.jp/files/image/show/2014063012.jpg", width="640").toReplace
+                                .subtitle hola bola
+                        .miniaturas.fl.lknGallery
+                            a(href="javascript:;",data-subtitle="habla bateria",data-src="http://www.naqak.com/fotos/luna/luna_guitars_apl_tat.jpg")
                                 img(src!="<?php echo STATIC_URL ?>/img/img-prueba/thumb1.jpg")
-                            a(href="" , data-slide-index="1")
+                                .opacityLayer
+                            a(href="javascript:;",data-subtitle="habla baterio",data-src="http://www.naqak.com/fotos/luna/luna_guitars_apl_tat.jpg")
                                 img(src!="<?php echo STATIC_URL ?>/img/img-prueba/thumb2.jpg")
-                            a(href="" , data-slide-index="2")
+                                .opacityLayer
+                            a(href="javascript:;",data-subtitle="another subtitle", data-src="https://www.concertsquare.jp/files/image/show/2014063012.jpg")
                                 img(src!="<?php echo STATIC_URL ?>/img/img-prueba/thumb3.jpg")
-                            a(href="" , data-slide-index="3")
+                                .opacityLayer
+                            a(href="javascript:;")
                                 img(src!="<?php echo STATIC_URL ?>/img/img-prueba/thumb4.jpg")
-                            a(href="" , data-slide-index="4")
-                                img(src!="<?php echo STATIC_URL ?>/img/img-prueba/thumb5.jpg",class="nomargin")
+                                .opacityLayer
+                            a(href="javascript:;")
+                                img(src!="<?php echo STATIC_URL ?>/img/img-prueba/thumb5.jpg")
+                                .opacityLayer
                     .videos.row
                         ul.video-principal
-                            li
-                                iframe(src="//www.youtube.com/embed/3s9sH82rHjI",width="640",height="360",frameborder="0",allowfullscreen="true")
-                            li
-                                iframe(src="//www.youtube.com/embed/3DAIgaOb-Ig",width="640",height="360",frameborder="0",allowfullscreen="true")
-                            li
-                                iframe(src="//www.youtube.com/embed/NsyP2NkE2G0",width="640",height="360",frameborder="0",allowfullscreen="true")
-                            li
-                                iframe(src="//www.youtube.com/embed/94xvfWpuEWM",width="640",height="360",frameborder="0",allowfullscreen="true")
-                            li
-                                iframe(src="//www.youtube.com/embed/Jbmf_O8Mul8",width="640",height="360",frameborder="0",allowfullscreen="true")
-                        .miniaturas#videomini
-                            a(href="" , data-slide-index="0")
+                            .innerCtn
+                                iframe(src="http://www.youtube.com/embed/3s9sH82rHjI",width="640",height="360",frameborder="0",allowfullscreen="true").toReplace
+                        .miniaturas.lknGallery
+                            a(href="javascript:;", data-isvideo='true', data-src="http://www.youtube.com/embed/3DAIgaOb-Ig")
                                 img(src!="http://img.youtube.com/vi/3s9sH82rHjI/1.jpg")
-                            a(href="" , data-slide-index="1")
+                                .opacityLayer
+                            a(href="javascript:;", data-isvideo='true', data-src="http://www.youtube.com/embed/NsyP2NkE2G0")
                                 img(src!="http://img.youtube.com/vi/3DAIgaOb-Ig/1.jpg")
-                            a(href="" , data-slide-index="2")
+                                .opacityLayer
+                            a(href="javascript:;", data-isvideo='true', data-src="http://www.youtube.com/embed/94xvfWpuEWM")
                                 img(src!="http://img.youtube.com/vi/NsyP2NkE2G0/1.jpg")
-                            a(href="" , data-slide-index="3")
+                                .opacityLayer
+                            a(href="javascript:;", data-isvideo='true', data-src="")
                                 img(src!="http://img.youtube.com/vi/94xvfWpuEWM/1.jpg")
-                            a(href="" , data-slide-index="4")
-                                img(src!="http://img.youtube.com/vi/Jbmf_O8Mul8/1.jpg",class="nomargin")
+                                .opacityLayer
+                            a(href="javascript:;", data-isvideo='true', data-src="")
+                                img(src!="http://img.youtube.com/vi/Jbmf_O8Mul8/1.jpg")
+                                .opacityLayer
             .pasarela
                 img(src!="<?php echo STATIC_URL ?>/img/pasarela.png")
                 a(href="#tabs-1" ,class="btnticket mini-btn") Buy Tickets
@@ -132,4 +127,14 @@ block content
                     input(type="text",name="evento-suscribir", id="evento-suscribir",placeholder="Enter Your Email")
                     button Subscribe
             .clear
-
+script(type="text/template", id="toReplace")
+    .innerCtn
+        //img(src!="<?php echo STATIC_URL ?>/img/img-prueba/slide1.jpg").toReplace
+        {{ if(!isVideo){ }}
+        {{= isVideo }}
+        img(src!="{{= fuente }}", width="640").toReplace
+        .subtitle {{= subtitulo }}
+        {{ }else{ }}
+        {{= isVideo }}
+        iframe(src!="{{= fuente }}",width="640",height="360",frameborder="0",allowfullscreen="true").toReplace
+        {{ } }}

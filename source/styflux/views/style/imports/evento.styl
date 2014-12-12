@@ -95,6 +95,20 @@ i.isprite
 	border-radius 5px 5px
 .slider-imagenes,.videos
 	margin-bottom 15px
+	.slider-imagen
+		position relative
+		.subtitle
+			position absolute
+			bottom 0
+			left 0
+			width 100%
+			color #fff
+			background url(routImg+'bgOpacity.png')
+			height 70px
+			padding 18px 23px
+			box-sizing border-box
+			line-height 17px
+			font-size 13px
 #tabs
 	color #787878
 	border none
@@ -107,7 +121,6 @@ i.isprite
 			color #787878
 			font-size 14px
 			font-family family2
-
 .ui-tabs
 	border-radius 0px
 	position relative
@@ -152,10 +165,26 @@ i.isprite
 	p
 		padding-bottom 10px
 .miniaturas
-	padding-top 15px
+	margin-top 15px
 	img
-		margin-right 15px
 		width 116px
+	a
+		display block
+		float left
+		position relative
+		margin-left 15px
+		&:first-child
+			margin-left 0
+		&.active
+			.opacityLayer
+				display none
+	.opacityLayer
+		height 100%
+		position absolute
+		width 100%
+		top 0
+		left 0
+		background url(routImg+"bgOpacity.png")
 .nomargin
 	margin 0px !important
 .pasarela
