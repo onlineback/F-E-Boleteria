@@ -228,7 +228,6 @@ yOSON.AppCore.addModule "mapa", ((Sb) ->
 	init: (oParams) ->
 		catchDom()
 		bindEvents()
-
 ),["plugins/gmaps.js"]
 
 #-----------------------------------------------------------------------------------------------
@@ -286,7 +285,7 @@ yOSON.AppCore.addModule "evento", ((Sb) ->
 		dom.tab.tabs()
 	bindEvents= ()->
 		sliderimagen()
-		slidervideo()
+		#slidervideo()
 		facebook()
 		twitter()
 		eventotab()
@@ -347,5 +346,47 @@ yOSON.AppCore.addModule "noticia", ((Sb) ->
 	init: (oParams) ->
 		catchDom()
 		bindEvents()
-
 ),["plugins/jquery-ui.min.js"]
+#-----------------------------------------------------------------------------------------------
+# @Module: galleryChanges
+# @autor: JeanPaulDiaz
+# @Description: Modulo para tabla de reports
+#-----------------------------------------------------------------------------------------------
+yOSON.AppCore.addModule "galleryChanges", ((Sb) ->
+	data= {}
+	st=
+		"miniature": ".lknGallery"
+		"tpl":"#toReplace"
+		"replace":".toReplace"
+	dom= {}
+	mainTable= {}
+	catchDom= ()->
+		dom.miniatures= $(st.miniature).children()
+		dom.replace= $(st.replace)
+		dom.tpl= _.template $(st.tpl).html()
+	hideActual= (obj)->
+		obj.parent().parent().find(st.replace).fadeOut  "slow", ()->
+			showNew obj
+			$(st.replace).remove
+	showNew= (obj)->
+		data.fuente = obj.attr("data-src")
+		data.subtitulo = obj.attr("data-subtitle")
+		data.isVideo= obj.attr("data-isvideo")
+		tpl = dom.tpl(data)
+		padre = obj.parent().parent().find(st.replace).parents(".innerCtn").parent()
+		padre.html tpl
+		padre.find(".innerCtn").hide()
+		padre.find(".innerCtn").fadeIn "slow"
+	gallery= ()->
+		dom.miniatures.on "click", ()->
+			$this = $(this)
+			console.log $this
+			$(".lknGallery .active").removeClass "active"
+			$this.addClass "active"
+			hideActual $this
+	bindEvents= ()->
+		gallery()
+	init: (oParams) ->
+		catchDom()
+		bindEvents()
+),["plugins/jqUnderscore.js"]

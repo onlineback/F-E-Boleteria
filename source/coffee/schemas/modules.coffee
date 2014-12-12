@@ -18,8 +18,17 @@ yOSON.AppSchema.modules=
 						'index' : ->
 							yOSON.AppCore.runModule 'mapa'
 							yOSON.AppCore.runModule 'evento'
+							yOSON.AppCore.runModule 'galleryChanges'
+							yOSON.AppCore.runModule 'generateSocial'
 						'byDefault': ->
 					allActions: ->
+			'venue':
+				actions :
+					'index' : ->
+						yOSON.AppCore.runModule 'mapa'
+						yOSON.AppCore.runModule 'galleryChanges'
+					'byDefault': ->
+				allActions: ->
 			byDefault : ->
 			allActions: ->
 		byDefault : ->
