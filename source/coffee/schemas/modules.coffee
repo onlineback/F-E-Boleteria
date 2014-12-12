@@ -22,6 +22,9 @@ yOSON.AppSchema.modules=
 							yOSON.AppCore.runModule 'mapa'
 							yOSON.AppCore.runModule 'evento'
 						'byDefault': ->
+						'resultados' : ->
+							yOSON.AppCore.runModule 'resultados'
+						'byDefault': ->
 					allActions: ->
 			byDefault : ->
 			allActions: ->

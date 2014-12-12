@@ -349,3 +349,49 @@ yOSON.AppCore.addModule "noticia", ((Sb) ->
 		bindEvents()
 
 ),["plugins/jquery-ui.min.js"]
+
+#-----------------------------------------------------------------------------------------------
+# @Module: resultado
+# @autor: joseluis
+# @Description: jose
+#-----------------------------------------------------------------------------------------------
+
+yOSON.AppCore.addModule "resultados", ((Sb) ->
+	st=
+		"picker":".resultafecha1"
+		"picker2":".resultafecha2"
+	dom= {}
+	mainTable= {}
+	catchDom= ()->
+		dom.mapa= $(st.mapa)
+		dom.picker= $(st.picker)
+		dom.picker2= $(st.picker2)
+	declareTable= ()->
+		$(".contenido-slider").bxSlider
+			auto: true
+			autoControls: true
+	calenSearch= ()->
+		dom.picker.datepicker
+			altField: "#from"
+			altFormat: "yy-mm-dd"
+			changeMonth: true
+			onClose: (selectedDate) ->
+				$(".resultafecha2").datepicker "option", "minDate", selectedDate
+				return
+	calenSearch2= ()->
+		dom.picker2.datepicker
+			altField: "#to"
+			altFormat: "yy-mm-dd"
+			changeMonth: true
+			onClose: (selectedDate) ->
+				$(".resultafecha1").datepicker "option", "maxDate", selectedDate
+				return
+	bindEvents= ()->
+		declareTable()
+		calenSearch()
+		calenSearch2()
+	init: (oParams) ->
+		catchDom()
+		bindEvents()
+
+),["plugins/jquery.bxslider.min.js","plugins/jqUI.js"]

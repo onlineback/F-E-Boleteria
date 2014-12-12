@@ -33,8 +33,14 @@ block content
 						input(type="radio",name="rango",checked="checked")
 						span Date Range
 					.rango-fechas
-						input(type="text",name="fecha1",placeholder="FROM :")
-						input(type="text",name="fecha2",placeholder="TO :")
+						.input-fechas
+							input(type="text",placeholder="FROM :",class="resultafecha1")
+							input(type="hidden",id="from")
+							i.sprite.icCalendarwhite
+						.input-fechas
+							input(type="text",placeholder="TO :",class="resultafecha2")
+							input(type="hidden",id="to")
+							i.sprite.icCalendarceleste
 		.resultados
 			h2 Results of events between &nbsp;
 				strong.resaltado 08/16/2014 &nbsp;
