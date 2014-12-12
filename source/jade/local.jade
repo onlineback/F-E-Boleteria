@@ -15,21 +15,22 @@ block content
                 .sidebar-info.row
                     .imgCtn
                         .centerImg
-                            img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg")
-                            a(href="javascript:;")
-                                i.sprite.icExpandImg
+                            .innerCtn
+                                img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg").toReplace
+                                a(href="javascript:;")
+                                    i.sprite.icExpandImg
                         //img(src!="<?php echo STATIC_URL ?>/img/img-prueba/sombra.png",class="sombra")
-                    .imgSelector.row
-                        img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", width="66", height="58").active
-                        img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", width="66", height="58")
-                        img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", width="66", height="58")
-                        img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", width="66", height="58")
-                        img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", width="66", height="58").fourth-cuad
-                        img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", width="66", height="58")
-                        img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", width="66", height="58")
-                        img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", width="66", height="58")
+                    .imgSelector.row.lknGallery
+                        img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", width="66", height="58", data-src="https://ci6.googleusercontent.com/proxy/tYpsvWQgwxoqmi8P7wZqklknTH-KZmu0wFpCaG19230VPyIavKx-FC9pzahegDBaeppmttgKvUvIpo67X5HbzTf7eLl9k2WHSBk0JHRsWZ8eTaJqZvXqrdy3b7OH=s0-d-e1-ft#http://mkt-newsletter.s3.amazonaws.com/pe/2014/diciembre/20141211/d.jpg").active
+                        img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", width="66", height="58", data-src="https://ci5.googleusercontent.com/proxy/D5F7F0GlO6Dja6pq0sdYEHiFMGrAMA6e50A-qu2BVXO5M2zSbPfy0Q9fIMdt69CsZ6CVTKkKCPSPvuMuNc6eoZT2_Xk250v4535FDijbjq0cy0Tqup0qpEfKmPOG6F4X4w=s0-d-e1-ft#http://mkt-newsletter.s3.amazonaws.com/pe/2014/diciembre/20141211/c5_01.jpg")
+                        img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", width="66", height="58", data-src="3")
+                        img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", width="66", height="58", data-src="4")
+                        img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", width="66", height="58", data-src="5").fourth-cuad
+                        img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", width="66", height="58", data-src="6")
+                        img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", width="66", height="58", data-src="7")
+                        img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", width="66", height="58", data-src="8")
                     .mapa
-                        img(src!="<?php echo STATIC_URL ?>/img/img-prueba/mapa.jpg")
+                        #mapa
                         p.hltext.txtBlue How i get the venue Name
                         p.address2.txtSoftGrey
                             i.isprite.icAddressPinGrey
@@ -117,3 +118,8 @@ block content
                                 li 4000 persones
                                 li Showbizz S.A.
                                 li contacto@showbizz.com
+script(type="text/template", id="toReplace")
+    .innerCtn
+        img(src!="{{= fuente }}", data-replace="true", width="276").toReplace
+        a(href="javascript:;")
+                i.sprite.icExpandImg

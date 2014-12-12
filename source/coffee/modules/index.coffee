@@ -189,23 +189,48 @@ yOSON.AppCore.addModule "index", ((Sb) ->
 		$container.masonry
 			gutter: 10
 			itemSelector: ".box"
+	combo1=()->
+		$("select#category").each ->
+			title = "What Are You Looking For"
+			title = $("option:selected", this).text()  unless $("option:selected", this).val() is ""
+			$(this).css(
+				"z-index": 10
+				opacity: 0
+				"-khtml-appearance": "none"
+			).before("<span class=\"select1\">" + title + "</span>").change ->
+				val = $("option:selected", this).text()
+				$(this).prev().text val
+				return
+		return
+	combo2=()->
+		$("select#venue").each ->
+			title = "Where"
+			title = $("option:selected", this).text()  unless $("option:selected", this).val() is ""
+			$(this).css(
+				"z-index": 10
+				opacity: 0
+				"-khtml-appearance": "none"
+			).before("<span class=\"select2\">" + title + "</span>").change ->
+				val = $("option:selected", this).text()
+				$(this).prev().text val
+				return
+			return
 	bindEvents= ()->
 		declareTable()
 		calenSearch()
 		calenSearch2()
 		inicio()
+		combo1()
+		combo2()
 	init: (oParams) ->
 		catchDom()
 		bindEvents()
-
 ),["plugins/jquery.bxslider.min.js","plugins/jqUI.js","plugins/masonry.js"]
-
 #-----------------------------------------------------------------------------------------------
 # @Module: mapa
 # @autor: joseluis
 # @Description: jose
 #-----------------------------------------------------------------------------------------------
-
 yOSON.AppCore.addModule "mapa", ((Sb) ->
 	st=
 		"mapa": "#mapa"
@@ -235,15 +260,12 @@ yOSON.AppCore.addModule "mapa", ((Sb) ->
 	init: (oParams) ->
 		catchDom()
 		bindEvents()
-
 ),["plugins/gmaps.js"]
-
 #-----------------------------------------------------------------------------------------------
 # @Module: evento
 # @autor: joseluis
 # @Description: jose
 #-----------------------------------------------------------------------------------------------
-
 yOSON.AppCore.addModule "evento", ((Sb) ->
 	st=
 		"slider": ".bxslider"
@@ -293,7 +315,7 @@ yOSON.AppCore.addModule "evento", ((Sb) ->
 		dom.tab.tabs()
 	bindEvents= ()->
 		sliderimagen()
-		slidervideo()
+		#slidervideo()
 		facebook()
 		twitter()
 		eventotab()
@@ -354,15 +376,55 @@ yOSON.AppCore.addModule "noticia", ((Sb) ->
 	init: (oParams) ->
 		catchDom()
 		bindEvents()
-
 ),["plugins/jquery-ui.min.js"]
-
+#-----------------------------------------------------------------------------------------------
+# @Module: galleryChanges
+# @autor: JeanPaulDiaz
+# @Description: Modulo para tabla de reports
+#-----------------------------------------------------------------------------------------------
+yOSON.AppCore.addModule "galleryChanges", ((Sb) ->
+	data= {}
+	st=
+		"miniature": ".lknGallery"
+		"tpl":"#toReplace"
+		"replace":".toReplace"
+	dom= {}
+	mainTable= {}
+	catchDom= ()->
+		dom.miniatures= $(st.miniature).children()
+		dom.replace= $(st.replace)
+		dom.tpl= _.template $(st.tpl).html()
+	hideActual= (obj)->
+		obj.parent().parent().find(st.replace).fadeOut  "slow", ()->
+			showNew obj
+			$(st.replace).remove
+	showNew= (obj)->
+		data.fuente = obj.attr("data-src")
+		data.subtitulo = obj.attr("data-subtitle")
+		data.isVideo= obj.attr("data-isvideo")
+		tpl = dom.tpl(data)
+		padre = obj.parent().parent().find(st.replace).parents(".innerCtn").parent()
+		padre.html tpl
+		padre.find(".innerCtn").hide()
+		padre.find(".innerCtn").fadeIn "slow"
+	gallery= ()->
+		dom.miniatures.on "click", ()->
+			$this = $(this)
+			console.log $this
+			$(".lknGallery .active").removeClass "active"
+			$this.addClass "active"
+			hideActual $this
+	bindEvents= ()->
+		gallery()
+	init: (oParams) ->
+		catchDom()
+		bindEvents()
+),["plugins/jqUnderscore.js"]
 #-----------------------------------------------------------------------------------------------
 # @Module: resultado
 # @autor: joseluis
 # @Description: jose
 #-----------------------------------------------------------------------------------------------
-
 yOSON.AppCore.addModule "resultados", ((Sb) ->
 	st=
 		"picker":".resultafecha1"
@@ -400,5 +462,4 @@ yOSON.AppCore.addModule "resultados", ((Sb) ->
 	init: (oParams) ->
 		catchDom()
 		bindEvents()
-
 ),["plugins/jquery.bxslider.min.js","plugins/jqUI.js"]
