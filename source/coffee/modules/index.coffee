@@ -157,10 +157,11 @@ yOSON.AppCore.addModule "index", ((Sb) ->
 		"slider": ".contenido-slider"
 		"picker":".fecha1"
 		"picker2":".fecha2"
+		"event":".container-eventos"
 	dom= {}
 	mainTable= {}
 	catchDom= ()->
-		dom.mapa= $(st.mapa)
+		dom.event= $(st.event)
 		dom.picker= $(st.picker)
 		dom.picker2= $(st.picker2)
 	declareTable= ()->
@@ -184,7 +185,7 @@ yOSON.AppCore.addModule "index", ((Sb) ->
 				$(".fecha1").datepicker "option", "maxDate", selectedDate
 				return
 	inicio=()->
-		$container = $(".container-eventos")
+		$container = dom.event
 		$container.masonry
 			gutter: 10
 			itemSelector: ".box"
