@@ -7,6 +7,12 @@ yOSON.AppSchema.modules=
 						yOSON.AppCore.runModule 'index'
 					'byDefault': ->
 				allActions: ->
+			'contacto':
+					actions :
+						'index' : ->
+							yOSON.AppCore.runModule 'validation',{'form':'#formcontacto'}
+						'byDefault': ->
+					allActions: ->
 			'noticias':
 				actions :
 					'index' : ->

@@ -183,15 +183,21 @@ yOSON.AppCore.addModule "index", ((Sb) ->
 			onClose: (selectedDate) ->
 				$(".fecha1").datepicker "option", "maxDate", selectedDate
 				return
+	inicio=()->
+		$container = $(".container-eventos")
+		$container.masonry
+			gutter: 10
+			itemSelector: ".box"
 	bindEvents= ()->
 		declareTable()
 		calenSearch()
 		calenSearch2()
+		inicio()
 	init: (oParams) ->
 		catchDom()
 		bindEvents()
 
-),["plugins/jquery.bxslider.min.js","plugins/jqUI.js"]
+),["plugins/jquery.bxslider.min.js","plugins/jqUI.js","plugins/masonry.js"]
 
 #-----------------------------------------------------------------------------------------------
 # @Module: mapa
