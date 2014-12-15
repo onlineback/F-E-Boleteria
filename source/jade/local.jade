@@ -51,14 +51,171 @@ block content
                                 p Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Duis scelerisque molestie turpis. Sed fringilla, massa eget luctus malesuada, metus eros molestie lectus, ut tempus eros massa ut dolor.
                             #tabs-3
                                 p Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem.
-                    table.venue-events
-                        thead
-                            td.nowShow.active
-                                a(href="javascript:;").lnkNow Now Showing
-                            td(colspan="2").upcomingShow
-                                a(href="javascript:;").lnkUpcoming Upcoming Shows
-                        tfoot
+                    .tabsTables.row
+                        a(href="javascript:;", data-show="#nowShowing").active.lnkNow Now Showing
+                        a(href="javascript:;", data-show="#upcomingShows").lnkUpcoming Upcoming Shows
+                    table.venue-events#nowShowing
+                        tbody
                             tr
+                                <?php if(!empty($this->dataEvento['now'])):?>
+                                <?php foreach($this->dataEvento['now'] AS $value):?>
+                                td.dates <?php echo date('M d, Y N',strtotime($valu['fechaInicioPublicacion'])); ?>@ <?php echo date('H:i',strtotime($value['hora'])); ?>9:30
+                                td.imgTable
+                                    img(src!="<?php echo DINAMIC_URL ?>/eventos/<?php echo $value['imagenPrincipal']?>", alt!="<?php echo $value['titulo']?>", width="71", height="48")
+                                td.mclass
+                                    h3.txtBlue <?php echo $value['titulo']?>
+                                td.buyTicks
+                                    a(href="javascript:;").btn.bgOrange Buy Tickets
+                                <?php endforeach?>    
+                                <?php else:?>
+                                td(colspan="4")
+                                    p No hay eventos disponibles
+                                <?php endif;?>
+                            tr
+                                td.dates Dec 12, 2014 Friday @ 9:30
+                                td.imgTable
+                                    img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", alt="Masterclass", width="71", height="48")
+                                td.mclass
+                                    h3.txtBlue Masterclass
+                                td.buyTicks
+                                    a(href="javascript:;").btn.bgOrange Buy Ticket
+                            tr
+                                td.dates Dec 12, 2014 Friday @ 9:30
+                                td.imgTable
+                                    img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", alt="Masterclass", width="71", height="48")
+                                td.mclass
+                                    h3.txtBlue Masterclass
+                                td.buyTicks
+                                    a(href="javascript:;").btn.bgOrange Buy Ticket
+                            tr
+                                td.dates Dec 12, 2014 Friday @ 9:30
+                                td.imgTable
+                                    img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", alt="Masterclass", width="71", height="48")
+                                td.mclass
+                                    h3.txtBlue Masterclass
+                                td.buyTicks
+                                    a(href="javascript:;").btn.bgOrange Buy Ticket
+                            tr
+                                td.dates Dec 12, 2014 Friday @ 9:30
+                                td.imgTable
+                                    img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", alt="Masterclass", width="71", height="48")
+                                td.mclass
+                                    h3.txtBlue Masterclass
+                                td.buyTicks
+                                    a(href="javascript:;").btn.bgOrange Buy Ticket
+                            tr
+                                td.dates Dec 12, 2014 Friday @ 9:30
+                                td.imgTable
+                                    img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", alt="Masterclass", width="71", height="48")
+                                td.mclass
+                                    h3.txtBlue Masterclass
+                                td.buyTicks
+                                    a(href="javascript:;").btn.bgOrange Buy Ticket
+                            tr
+                                td.dates Dec 12, 2014 Friday @ 9:30
+                                td.imgTable
+                                    img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", alt="Masterclass", width="71", height="48")
+                                td.mclass
+                                    h3.txtBlue Masterclass
+                                td.buyTicks
+                                    a(href="javascript:;").btn.bgOrange Buy Ticket
+                            tr
+                                td.dates Dec 12, 2014 Friday @ 9:30
+                                td.imgTable
+                                    img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", alt="Masterclass", width="71", height="48")
+                                td.mclass
+                                    h3.txtBlue Masterclass
+                                td.buyTicks
+                                    a(href="javascript:;").btn.bgOrange Buy Ticket
+                            tr
+                                td.dates Dec 12, 2014 Friday @ 9:30
+                                td.imgTable
+                                    img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", alt="Masterclass", width="71", height="48")
+                                td.mclass
+                                    h3.txtBlue Masterclass
+                                td.buyTicks
+                                    a(href="javascript:;").btn.bgOrange Buy Ticket
+                            tr
+                                td.dates Dec 12, 2014 Friday @ 9:30
+                                td.imgTable
+                                    img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", alt="Masterclass", width="71", height="48")
+                                td.mclass
+                                    h3.txtBlue Masterclass
+                                td.buyTicks
+                                    a(href="javascript:;").btn.bgOrange Buy Ticket
+                            tr
+                                td.dates Dec 12, 2014 Friday @ 9:30
+                                td.imgTable
+                                    img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", alt="Masterclass", width="71", height="48")
+                                td.mclass
+                                    h3.txtBlue Masterclass
+                                td.buyTicks
+                                    a(href="javascript:;").btn.bgOrange Buy Ticket
+                            tr
+                                td.dates Dec 12, 2014 Friday @ 9:30
+                                td.imgTable
+                                    img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", alt="Masterclass", width="71", height="48")
+                                td.mclass
+                                    h3.txtBlue Masterclass
+                                td.buyTicks
+                                    a(href="javascript:;").btn.bgOrange Buy Ticket
+                            tr
+                                td.dates Dec 12, 2014 Friday @ 9:30
+                                td.imgTable
+                                    img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", alt="Masterclass", width="71", height="48")
+                                td.mclass
+                                    h3.txtBlue Masterclass
+                                td.buyTicks
+                                    a(href="javascript:;").btn.bgOrange Buy Ticket
+                            tr
+                                td.dates Dec 12, 2014 Friday @ 9:30
+                                td.imgTable
+                                    img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", alt="Masterclass", width="71", height="48")
+                                td.mclass
+                                    h3.txtBlue Masterclass
+                                td.buyTicks
+                                    a(href="javascript:;").btn.bgOrange Buy Ticket
+                            tr
+                                td.dates Dec 12, 2014 Friday @ 9:30
+                                td.imgTable
+                                    img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", alt="Masterclass", width="71", height="48")
+                                td.mclass
+                                    h3.txtBlue Masterclass
+                                td.buyTicks
+                                    a(href="javascript:;").btn.bgOrange Buy Ticket
+                            tr
+                                td.dates Dec 12, 2014 Friday @ 9:30
+                                td.imgTable
+                                    img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", alt="Masterclass", width="71", height="48")
+                                td.mclass
+                                    h3.txtBlue Masterclass
+                                td.buyTicks
+                                    a(href="javascript:;").btn.bgOrange Buy Ticket
+                            tr
+                                td.dates Dec 12, 2014 Friday @ 9:30
+                                td.imgTable
+                                    img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", alt="Masterclass", width="71", height="48")
+                                td.mclass
+                                    h3.txtBlue Masterclass
+                                td.buyTicks
+                                    a(href="javascript:;").btn.bgOrange Buy Ticket
+                            tr
+                                td.dates Dec 12, 2014 Friday @ 9:30
+                                td.imgTable
+                                    img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", alt="Masterclass", width="71", height="48")
+                                td.mclass
+                                    h3.txtBlue Masterclass
+                                td.buyTicks
+                                    a(href="javascript:;").btn.bgOrange Buy Ticket
+                            tr
+                                td.dates Dec 12, 2014 Friday @ 9:30
+                                td.imgTable
+                                    img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", alt="Masterclass", width="71", height="48")
+                                td.mclass
+                                    h3.txtBlue Masterclass
+                                td.buyTicks
+                                    a(href="javascript:;").btn.bgOrange Buy Ticket
+                    table.venue-events#upcomingShows
                         tbody
                             tr
                                 <?php if(!empty($this->dataEvento['now'])):?>

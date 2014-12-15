@@ -5,7 +5,7 @@ block content
                 h2 <?php echo $this->noticia['titulo']; ?>
                 img(src!="<?php echo DINAMIC_URL ?>/noticias/<?php echo $this->noticia['imagenPrincipal']; ?>")
                 .redes-noticias
-                    a(href="", target="_blank").fbShare
+                    a(href="", target="_blank", data-activity="details").fbShare
                 .redes-google
                     | <g:plusone size="medium"></g:plusone>
                 .redes-noticias-twitter
