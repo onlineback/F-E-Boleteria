@@ -4,12 +4,12 @@ block content
     .fondo-evento.row
         .box-center.container-evento
             .page-info
-                h2.page-title Sample Tittle Venue Name
+                h2.page-title <?php echo $this->evento['titulo']; ?>
                 br
-                p.page-subtitle Level1/ level 2 / Level 3 / level 4
+                p.page-subtitle <?php echo $this->evento['subTitulo']; ?>
             .sidebar-info.row
                 .imgCtn
-                    img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg")
+                    img(src!="<?php echo DINAMIC_URL ?>/eventos/<?php echo $this->evento['evento_contenido_imagenprincipal']; ?>")
                 #fb-root
                 .redes-evento
                     a(href="http://www.facebook.com/sharer.php?s=100&p[url]=http://developando.com?s=100&p[title]=Conoce+a+Developando&p[images][0]=http://developando.com/images/developandoLogo.jpeg&p[summary]=Desarrollo+web+y+movil") Compartir FB
@@ -27,20 +27,20 @@ block content
                             span Release Date
                         li
                             i.sprite.icDuracion
-                            span Duration:
+                            span Hora:
                         li
                             i.sprite.icAge(style="left:-2px;")
                             span Age restriction:
                 .lista-info-evento
                     ul
-                        li  Drama, Comedy
-                        li  August 30,2014
-                        li  1 hour and 30 mins
-                        li  13 +
+                        li  <?php echo $this->evento['subcategoria_nombres']; ?>
+                        li  <?php echo date('F d,Y',strtotime($this->evento['fechaInicioPublicacion'])); ?>
+                        li  <?php echo date('H:i',strtotime($this->evento['hora']));//date('H \h\o\u\r \a\n\d i \m\i\n\s',strtotime($this->evento['hora'])); ?>
+                        li  <?php echo $this->evento['restriccionEdad']; ?> +
                 #mapa
                 p.contenido-extra Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                 p.ver-venue
-                    a(href="javascript:;" , class="btn-evenue")
+                    a(href!="<?php echo $this->url(array('id'=>$this->evento['venue_id']),'venue'); ?>" , class="btn-evenue")
                         img(src!="<?php echo STATIC_URL ?>/img/btn-venue.png")
             .page-ctn
                 .extra-evento
@@ -49,31 +49,46 @@ block content
                             span A- A+
                             i.sprite.icPrint
                         ul
+                            <?php if(!empty($this->evento['tag1'])): ?>
                             li
-                                a(href="#tabs-1" ) The show
+                                a(href="#tabs-1" ) <?php echo $this->evento['tag1']; ?>
+                            <?php endif; ?>
+                            <?php if(!empty($this->evento['tag2'])): ?>
                             li
-                                a(href="#tabs-2" ) Author
+                                a(href="#tabs-2" ) <?php echo $this->evento['tag2']; ?>
+                            <?php endif; ?>
+                            <?php if(!empty($this->evento['tag3'])): ?>
                             li
-                                a(href="#tabs-3" ) Director
+                                a(href="#tabs-3" ) <?php echo $this->evento['tag3']; ?>
+                            <?php endif; ?>
+                            <?php if(!empty($this->evento['tag4'])): ?>
+                            li
+                                a(href="#tabs-4" ) <?php echo $this->evento['tag4']; ?>
+                            <?php endif; ?>
+                            <?php if(!empty($this->evento['tag5'])): ?>
+                            li
+                                a(href="#tabs-5" ) <?php echo $this->evento['tag5']; ?>
+                            <?php endif; ?>
+                        <?php if(!empty($this->evento['tag1'])): ?>
                         #tabs-1
-                            p Proin elit arcu, rutrum commodo, vehicula tempus, commodo a, risus. Curabitur nec arcu. Donec sollicitudin mi sit amet mauris. Nam elementum quam ullamcorper ante. Etiam aliquet massa et lorem. Mauris dapibus lacus auctor risus.
-                            p enean tempor ullamcorper leo. Vivamus sed magna quis ligula eleifend adipiscing. Duis orci. Aliquam sodales tortor vitae ipsum. Aliquam nulla. Duis aliquam molestie erat. Ut et mauris vel pede varius sollicitudin. Sed ut dolor nec orci tincidunt interdum. Phasellus ipsum. Nunc tristique tempus lectus.
+                            p <?php echo $this->evento['evento_contenido_contenidoTag1']; ?>
+                        <?php endif; ?>
+                        <?php if(!empty($this->evento['tag2'])): ?>
                         #tabs-2
-                            p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                            p ex ea commodo consequat.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                            p Tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat dolore magna aliqua. Ut enim ad minim veniam.
-                            p.cast CAST
-                            p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            p.produce PRODUCE
-                            .contenido-produce
-                                img(src!="<?php echo STATIC_URL ?>/img/img-prueba/logo-produce.png")
-                                p.produce Name  of producer
-                                p.produce Venue
-                                p.produce How to  get there
+                            p <?php echo $this->evento['evento_contenido_contenidoTag2']; ?>
+                        <?php endif; ?>
+                        <?php if(!empty($this->evento['tag3'])): ?>
                         #tabs-3
-                            p Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem.
-                            p enean tempor ullamcorper leo. Vivamus sed magna quis ligula eleifend adipiscing. Duis orci. Aliquam sodales tortor vitae ipsum. Aliquam nulla. Duis aliquam molestie erat. Ut et mauris vel pede varius sollicitudin. Sed ut dolor nec orci tincidunt interdum. Phasellus ipsum. Nunc tristique tempus lectus.
+                            p <?php echo $this->evento['evento_contenido_contenidoTag3']; ?>
+                        <?php endif; ?>
+                        <?php if(!empty($this->evento['tag4'])): ?>
+                        #tabs-4
+                            p <?php echo $this->evento['evento_contenido_contenidoTag4']; ?>
+                        <?php endif; ?>
+                        <?php if(!empty($this->evento['tag5'])): ?>
+                        #tabs-5
+                            p <?php echo $this->evento['evento_contenido_contenidoTag5']; ?>
+                        <?php endif; ?>
                     .botones-eventos
                         a(href="#tabs-1" ,class="btnselect") Select  Best Available Seats
                         a(href="#tabs-1" ,class="btnticket") Buy Tickets
