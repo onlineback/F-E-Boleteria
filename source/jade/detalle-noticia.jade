@@ -1,4 +1,3 @@
-
 block content
     .container-noticias
         section.contenido-noticias
@@ -6,7 +5,7 @@ block content
                 h2 <?php echo $this->noticia['titulo']; ?>
                 img(src!="<?php echo DINAMIC_URL ?>/noticias/<?php echo $this->noticia['imagenPrincipal']; ?>")
                 .redes-noticias
-                    .fb-like(data-href="https://developers.facebook.com/docs/plugins/",data-layout="button",data-action="like",data-show-faces="true",data-share="false")
+                    a(href="", target="_blank").fbShare
                 .redes-google
                     | <g:plusone size="medium"></g:plusone>
                 .redes-noticias-twitter
@@ -15,9 +14,7 @@ block content
                 .descripcion
                     strong Date <?php echo date('M d, Y',strtotime($this->noticia['fechaInicioPublicacion'])); ?>
                     p <?php echo $this->noticia['contenido']; ?>
-
                 .clear
-
         .fechas-noticias
             .fechas
                 <?php if(count($this->fechas)>0){ ?>
