@@ -162,10 +162,11 @@ yOSON.AppCore.addModule "index", ((Sb) ->
 	mainTable= {}
 	catchDom= ()->
 		dom.event= $(st.event)
+		dom.slider= $(st.slider)
 		dom.picker= $(st.picker)
 		dom.picker2= $(st.picker2)
 	declareTable= ()->
-		$(".contenido-slider").bxSlider
+		dom.slider.bxSlider
 			auto: true
 			autoControls: true
 	calenSearch= ()->

@@ -288,8 +288,8 @@ block content
 						a(href="javascript:;") Privacy Policy
 			.clear
 script(type="text/template", id="cargabox")
+	| <% _.each(items,function(item,key,arr) { %>
 	.box
-	<% _.each(items,function(item,key,arr) { %>
 		a(href="javascript:;")
 			img(src!="<?php echo STATIC_URL ?>/img/img-prueba/img4.jpg",class="img-responsive")
 		.subtitulo
@@ -308,4 +308,4 @@ script(type="text/template", id="cargabox")
 			p.text-box Aeorem Ipum Dolor Sit Amet Magna Elita. Lorem Ipsum Elitm.Dolor Sit Amet Magna Elitam vestibulumty. MAgna parispatis
 			p
 				a(href="javascript:;",class="comprar-entradas") COMPRAR ENTRADAS
-	<% }); %>
+	|<% }); %>
