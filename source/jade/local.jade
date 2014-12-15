@@ -5,36 +5,32 @@ block content
         .box-center.container-local
             .container-evento
                 .page-info
-                    h2.page-title Sample Tittle Venue Name: Un titulo de un local cualquiera
+                    h2.page-title <?php echo $this->venue['nombre']; ?>
                     br
                     p.page-subtitlebg
                         i.isprite.icAddressPin
-                        | La Paz, Miraflores 12578, Lima - Perú
+                        | <?php echo $this->venue['direccion1']; ?>
                     br
-                    p.page-subtitlebg (01) 2134343
+                    p.page-subtitlebg <?php echo $this->venue['telefono']; ?>
                 .sidebar-info.row
                     .imgCtn
                         .centerImg
                             .innerCtn
-                                img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg").toReplace
+                                img(src!="<?php echo DINAMIC_URL ?>/venues/<?php echo $this->venue['imagenPrincipal']; ?>").toReplace
                                 a(href="javascript:;")
                                     i.sprite.icExpandImg
                         //img(src!="<?php echo STATIC_URL ?>/img/img-prueba/sombra.png",class="sombra")
                     .imgSelector.row.lknGallery
-                        img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", width="66", height="58", data-src="https://ci6.googleusercontent.com/proxy/tYpsvWQgwxoqmi8P7wZqklknTH-KZmu0wFpCaG19230VPyIavKx-FC9pzahegDBaeppmttgKvUvIpo67X5HbzTf7eLl9k2WHSBk0JHRsWZ8eTaJqZvXqrdy3b7OH=s0-d-e1-ft#http://mkt-newsletter.s3.amazonaws.com/pe/2014/diciembre/20141211/d.jpg").active
-                        img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", width="66", height="58", data-src="https://ci5.googleusercontent.com/proxy/D5F7F0GlO6Dja6pq0sdYEHiFMGrAMA6e50A-qu2BVXO5M2zSbPfy0Q9fIMdt69CsZ6CVTKkKCPSPvuMuNc6eoZT2_Xk250v4535FDijbjq0cy0Tqup0qpEfKmPOG6F4X4w=s0-d-e1-ft#http://mkt-newsletter.s3.amazonaws.com/pe/2014/diciembre/20141211/c5_01.jpg")
-                        img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", width="66", height="58", data-src="3")
-                        img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", width="66", height="58", data-src="4")
-                        img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", width="66", height="58", data-src="5").fourth-cuad
-                        img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", width="66", height="58", data-src="6")
-                        img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", width="66", height="58", data-src="7")
-                        img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", width="66", height="58", data-src="8")
+                        <?php if(count($this->galeriaVenue)>0){
+                        |   foreach ($this->galeriaVenue as $key => $value) { ?>
+                        img(src!="<?php echo DINAMIC_URL ?>/venues/gallery/<?php echo $value['nombre']; ?>", width="66", height="58", data-src="<?php echo DINAMIC_URL ?>/venues/gallery/<?php echo $value['nombre']; ?>")
+                        <?php }} ?>
                     .mapa
                         #mapa
                         p.hltext.txtBlue How i get the venue Name
                         p.address2.txtSoftGrey
                             i.isprite.icAddressPinGrey
-                            | La Paz, Miraflores 15074, Lima - Perú
+                            | <?php echo $this->venue['direccion1']; ?>
                     a(href="javascript:;").btn.btn-blue.btnDirections Get directions
                 .page-ctn
                     //.extra-evento
@@ -107,17 +103,19 @@ block content
                     .ctn360view
                         h3 Vista 360º
                         .streetview
-                        h3.mt17 About Venue name
-                        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                        .ctnDescription.row
-                            ul.txtBlue
-                                li Venue capacity:
-                                li Administrator:
-                                li Contact Information:
-                            ul
-                                li 4000 persones
-                                li Showbizz S.A.
-                                li contacto@showbizz.com
+                        h3.mt17 About <?php echo $this->venue['nombre']; ?>
+                        p <?php echo $this->venue['descripcion']; ?>
+                        h3.mt17 Parking
+                        p <?php echo $this->venue['estacionamiento']; ?>
+                        //.ctnDescription.row
+                        //    ul.txtBlue
+                        //        li Venue capacity:
+                        //        li Administrator:
+                        //        li Contact Information:
+                        //    ul
+                        //        li 4000 persones
+                        //       li Showbizz S.A.
+                        //        li contacto@showbizz.com
 script(type="text/template", id="toReplace")
     .innerCtn
         img(src!="{{= fuente }}", data-replace="true", width="276").toReplace
