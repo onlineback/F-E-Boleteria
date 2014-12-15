@@ -290,12 +290,18 @@ block content
 						a(href="javascript:;") Privacy Policy
 			.clear
 script(type="text/template", id="cargabox")
-	{{ _.each(items,function(item,key,arr) { }}
+	{{ _.each(items,function(item,key) { }}
 	.box
+		{{ if(item.evento_tag_color){ }}
+		.ribbon(style!="background-color: {{=item.evento_tag_color}};")  {{=item.evento_tag_nametag}}
+		.esquina(style="border-color: {{=item.evento_tag_coloroscuro}} {{=item.evento_tag_coloroscuro}} transparent transparent;")
+		{{ } }}
 		a(href="javascript:;")
-			img(src!="<?php echo STATIC_URL ?>/img/img-prueba/img4.jpg",class="img-responsive")
+			img(src!="<?php echo DINAMIC_URL ?>/eventos/banner/home/{{=item.evento_contenido_imagenprincipal}}",class="img-responsive")
 		.subtitulo
-			p.categoria5
+			p(style!="background: none repeat scroll 0 0 {{=item.categoria_color}};")
+				img(onerror!="this.onerror=null; this.src='<?php echo STATIC_URL . '/img/categorias/exposicion.png'; ?>';",src!="<?php echo DINAMIC_URL ?>/categoria/icono/{{=item.categoria_icono}}; ?>" ,class="img-subtitulo")
+				span {{=item.categoria_name}}
 			a(href="javascript:;",class="social-box")
 				i.sprite.icFacebook
 			a(href="javascript:;",class="social-box")
@@ -303,11 +309,11 @@ script(type="text/template", id="cargabox")
 		.clear
 		.contenido-box
 			p
-				strong	{{item.titulo}}
+				strong	{{=item.titulo}}
 			p.espacio-box
 				i.sprite.icCboicon2.icono-fecha
-				span Nov 10-11, 8pm onwards
-			p.text-box Aeorem Ipum Dolor Sit Amet Magna Elita. Lorem Ipsum Elitm.Dolor Sit Amet Magna Elitam vestibulumty. MAgna parispatis
+				span {{=item.evento_contenido_fechainicio}} {{=item.evento_contenido_fechafin}} {{=item.hora}}
+			p.text-box {{=item.descripcionCorta}}
 			p
 				a(href="javascript:;",class="comprar-entradas") COMPRAR ENTRADAS
 	{{ }) }}

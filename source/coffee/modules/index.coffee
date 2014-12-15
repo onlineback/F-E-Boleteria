@@ -200,6 +200,7 @@ yOSON.AppCore.addModule "index", ((Sb) ->
 				$elemt = $(".data-scroll").append _.template(tableTemplate,
 					items: msg.data
 				)
+				console.log msg.data
 				$container.masonry "appended", $elemt
 				return
 	combo1=()->
@@ -228,20 +229,7 @@ yOSON.AppCore.addModule "index", ((Sb) ->
 				$(this).prev().text val
 				return
 			return
-	cargadata=()->
 
-		$.ajax(
-			type: "POST"
-			url: yOSON.baseHost+'common/buscar-eventos?category=&venue=&from=&to='
-		).done (msg) ->
-			tableTemplate = $("#cargabox").html()
-
-			$(".container-eventos").append _.template(tableTemplate,
-				items: msg.data
-			)
-			msnry.appended msg.data
-			console.log msg.data
-			return
 	bindEvents= ()->
 		declareTable()
 		calenSearch()
