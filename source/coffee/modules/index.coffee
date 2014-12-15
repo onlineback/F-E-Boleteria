@@ -482,13 +482,13 @@ yOSON.AppCore.addModule "socialManage", ((Sb) ->
 			$this = $(this)
 			atribute = $this.attr "data-activity"
 			if typeof data-activity == undefined
-			url = $this.parents("article").find(".ver-noticia a").attr "href"
-			title = $this.parents("article").find("h2").html().replace " ","+"
-			description = $this.parents("article").find(".descripcion p").html().replace " ","+"
-			img = $this.parents("article").find("img").attr("src")
-			changeFBMeta(url, title, description, img)
-			completeUrl = "https://www.facebook.com/sharer.php?s=100&p[url]=" + yOSON.baseHost + url + "&p[title]=" + title + "&p[images][0]=" + img + "&p[summary]=" + description
-			window.open(completeUrl, '_blank');
+				url = $this.parents("article").find(".ver-noticia a").attr "href"
+				title = $this.parents("article").find("h2").html().replace " ","+"
+				description = $this.parents("article").find(".descripcion p").html().replace " ","+"
+				img = $this.parents("article").find("img").attr("src")
+				changeFBMeta(url, title, description, img)
+				completeUrl = "https://www.facebook.com/sharer.php?s=100&p[url]=" + yOSON.baseHost + url + "&p[title]=" + title + "&p[images][0]=" + img + "&p[summary]=" + description
+				window.open(completeUrl, '_blank');
 	changeFBMeta= (u,t,d,i)->
 		$('meta[property="og:url"]').attr("content",u)
 		$('meta[property="og:title"]').attr("content",t)
