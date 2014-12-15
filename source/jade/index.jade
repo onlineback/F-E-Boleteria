@@ -212,7 +212,6 @@ block content
 						i.sprite.icFacebook
 					a(href="javascript:;",class="social-box")
 						i.sprite.icTwitter
-
 				.clear
 				.contenido-box
 					p
@@ -287,3 +286,25 @@ block content
 					li
 						a(href="javascript:;") Privacy Policy
 			.clear
+script(type="text/template", id="cargabox")
+	.box
+	<% _.each(items,function(item,key,arr) { %>
+		a(href="javascript:;")
+			img(src!="<?php echo STATIC_URL ?>/img/img-prueba/img4.jpg",class="img-responsive")
+		.subtitulo
+			p.categoria5 MÚSICA
+			a(href="javascript:;",class="social-box")
+				i.sprite.icFacebook
+			a(href="javascript:;",class="social-box")
+				i.sprite.icTwitter
+		.clear
+		.contenido-box
+			p
+				strong	Lorem Ipsum Dolor Sit
+			p.espacio-box
+				i.sprite.icCboicon2.icono-fecha
+				span Nov 10-11, 8pm onwards
+			p.text-box Aeorem Ipum Dolor Sit Amet Magna Elita. Lorem Ipsum Elitm.Dolor Sit Amet Magna Elitam vestibulumty. MAgna parispatis
+			p
+				a(href="javascript:;",class="comprar-entradas") COMPRAR ENTRADAS
+	<% }); %>
