@@ -104,6 +104,7 @@ block content
 			<?php $this->headStyle()->appendStyle($styles);?>
 			.box
 				.ribbon new
+				.esquina
 				img(src!="<?php echo STATIC_URL ?>/img/img-prueba/img1.jpg",class="img-responsive")
 				.subtitulo
 					p.categoria2
@@ -126,6 +127,7 @@ block content
 						a(href="javascript:;",class="comprar-entradas") COMPRAR ENTRADAS
 			.box
 				.ribbon new
+				.esquina
 				a(href="javascript:;")
 					img(src!="<?php echo STATIC_URL ?>/img/img-prueba/img5.jpg",class="img-responsive")
 				.subtitulo
@@ -150,6 +152,7 @@ block content
 						a(href="javascript:;",class="comprar-entradas") COMPRAR ENTRADAS
 			.box
 				.ribbon new
+				.esquina
 				a(href="javascript:;")
 					img(src!="<?php echo STATIC_URL ?>/img/img-prueba/img6.jpg",class="img-responsive")
 				.subtitulo
@@ -160,7 +163,6 @@ block content
 						i.sprite.icFacebook
 					a(href="javascript:;",class="social-box")
 						i.sprite.icTwitter
-
 				.clear
 				.contenido-box
 					p
@@ -223,7 +225,7 @@ block content
 					p.text-box Aeorem Ipum Dolor Sit Amet Magna Elita. Lorem Ipsum Elitm.Dolor Sit Amet Magna Elitam vestibulumty. MAgna parispatis
 					p
 						a(href="javascript:;",class="comprar-entradas") COMPRAR ENTRADAS
-			.clear
+			.data-scroll
 	.clear
 	.subcripcion
 		.container-sub
@@ -288,12 +290,12 @@ block content
 						a(href="javascript:;") Privacy Policy
 			.clear
 script(type="text/template", id="cargabox")
-	| <% _.each(items,function(item,key,arr) { %>
+	{{ _.each(items,function(item,key,arr) { }}
 	.box
 		a(href="javascript:;")
 			img(src!="<?php echo STATIC_URL ?>/img/img-prueba/img4.jpg",class="img-responsive")
 		.subtitulo
-			p.categoria5 MÚSICA
+			p.categoria5
 			a(href="javascript:;",class="social-box")
 				i.sprite.icFacebook
 			a(href="javascript:;",class="social-box")
@@ -301,11 +303,11 @@ script(type="text/template", id="cargabox")
 		.clear
 		.contenido-box
 			p
-				strong	Lorem Ipsum Dolor Sit
+				strong	{{item.titulo}}
 			p.espacio-box
 				i.sprite.icCboicon2.icono-fecha
 				span Nov 10-11, 8pm onwards
 			p.text-box Aeorem Ipum Dolor Sit Amet Magna Elita. Lorem Ipsum Elitm.Dolor Sit Amet Magna Elitam vestibulumty. MAgna parispatis
 			p
 				a(href="javascript:;",class="comprar-entradas") COMPRAR ENTRADAS
-	|<% }); %>
+	{{ }) }}

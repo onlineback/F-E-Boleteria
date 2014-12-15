@@ -149,7 +149,7 @@ yOSON.AppCore.addModule "datatableRep", ((Sb) ->
 #-----------------------------------------------------------------------------------------------
 # @Module: index
 # @autor: joseluis
-# @Description: jose
+# @Description: inicio
 #-----------------------------------------------------------------------------------------------
 
 yOSON.AppCore.addModule "index", ((Sb) ->
@@ -158,6 +158,7 @@ yOSON.AppCore.addModule "index", ((Sb) ->
 		"picker":".fecha1"
 		"picker2":".fecha2"
 		"event":".container-eventos"
+		"tpl":"#cargabox"
 	dom= {}
 	mainTable= {}
 	catchDom= ()->
@@ -165,6 +166,7 @@ yOSON.AppCore.addModule "index", ((Sb) ->
 		dom.slider= $(st.slider)
 		dom.picker= $(st.picker)
 		dom.picker2= $(st.picker2)
+
 	declareTable= ()->
 		dom.slider.bxSlider
 			auto: true
@@ -186,10 +188,20 @@ yOSON.AppCore.addModule "index", ((Sb) ->
 				$(".fecha1").datepicker "option", "maxDate", selectedDate
 				return
 	inicio=()->
-		$container = dom.event
+		$container = $(".container-eventos")
 		$container.masonry
-			gutter: 10
 			itemSelector: ".box"
+			gutter: 10
+		$.ajax(
+				type: "POST"
+				url: yOSON.baseHost+'common/buscar-eventos?category=&venue=&from=&to='
+		).done (msg) ->
+				tableTemplate = $("#cargabox").html()
+				$elemt = $(".data-scroll").append _.template(tableTemplate,
+					items: msg.data
+				)
+				$container.masonry "appended", $elemt
+				return
 	combo1=()->
 		$("select#category").each ->
 			title = "What Are You Looking For"
@@ -216,6 +228,20 @@ yOSON.AppCore.addModule "index", ((Sb) ->
 				$(this).prev().text val
 				return
 			return
+	cargadata=()->
+
+		$.ajax(
+			type: "POST"
+			url: yOSON.baseHost+'common/buscar-eventos?category=&venue=&from=&to='
+		).done (msg) ->
+			tableTemplate = $("#cargabox").html()
+
+			$(".container-eventos").append _.template(tableTemplate,
+				items: msg.data
+			)
+			msnry.appended msg.data
+			console.log msg.data
+			return
 	bindEvents= ()->
 		declareTable()
 		calenSearch()
@@ -223,10 +249,11 @@ yOSON.AppCore.addModule "index", ((Sb) ->
 		inicio()
 		combo1()
 		combo2()
+
 	init: (oParams) ->
 		catchDom()
 		bindEvents()
-),["plugins/jquery.bxslider.min.js","plugins/jqUI.js","plugins/masonry.js"]
+),["plugins/jquery.bxslider.min.js","plugins/jqUI.js","plugins/masonry.js","plugins/jqUnderscore.js"]
 #-----------------------------------------------------------------------------------------------
 # @Module: mapa
 # @autor: joseluis
