@@ -491,3 +491,39 @@ yOSON.AppCore.addModule "resultados", ((Sb) ->
 		catchDom()
 		bindEvents()
 ),["plugins/jquery.bxslider.min.js","plugins/jqUI.js"]
+#-----------------------------------------------------------------------------------------------
+# @Module: socialManage
+# @autor: JeanPaulDiaz
+# @Description: Modulo para manejo de redes sociales
+#-----------------------------------------------------------------------------------------------
+yOSON.AppCore.addModule "socialManage", ((Sb) ->
+	st=
+		"fbShare": ".fbShare"
+	dom= {}
+	mainTable= {}
+	catchDom= ()->
+		dom.fbShare= $(st.fbShare)
+	facebookShare= ()->
+		dom.fbShare.on "click", (e)->
+			e.preventDefault()
+			$this = $(this)
+			atribute = $this.attr "data-activity"
+			if typeof data-activity == undefined
+				url = $this.parents("article").find(".ver-noticia a").attr "href"
+				title = $this.parents("article").find("h2").html().replace " ","+"
+				description = $this.parents("article").find(".descripcion p").html().replace " ","+"
+				img = $this.parents("article").find("img").attr("src")
+				changeFBMeta(url, title, description, img)
+				completeUrl = "https://www.facebook.com/sharer.php?s=100&p[url]=" + yOSON.baseHost + url + "&p[title]=" + title + "&p[images][0]=" + img + "&p[summary]=" + description
+				window.open(completeUrl, '_blank');
+	changeFBMeta= (u,t,d,i)->
+		$('meta[property="og:url"]').attr("content",u)
+		$('meta[property="og:title"]').attr("content",t)
+		$('meta[property="og:description"]').attr("content",d)
+		$('meta[property="og:image"]').attr("content",i)
+	bindEvents= ()->
+		facebookShare()
+	init: (oParams) ->
+		catchDom()
+		bindEvents()
+),["plugins/jqUnderscore.js"]

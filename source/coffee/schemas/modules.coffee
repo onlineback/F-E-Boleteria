@@ -17,6 +17,7 @@ yOSON.AppSchema.modules=
 				actions :
 					'index' : ->
 						yOSON.AppCore.runModule 'noticia'
+						yOSON.AppCore.runModule 'socialManage'
 					'byDefault': ->
 					'detalle' : ->
 						yOSON.AppCore.runModule 'noticia'
