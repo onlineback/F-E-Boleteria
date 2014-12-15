@@ -18,10 +18,10 @@ yOSON.AppSchema.modules=
 					'index' : ->
 						yOSON.AppCore.runModule 'noticia'
 						yOSON.AppCore.runModule 'socialManage'
-					'byDefault': ->
 					'detalle' : ->
 						yOSON.AppCore.runModule 'noticia'
-						'byDefault': ->
+						yOSON.AppCore.runModule 'socialManage'
+					'byDefault': ->
 				allActions: ->
 			'eventos':
 					actions :
@@ -40,6 +40,7 @@ yOSON.AppSchema.modules=
 					'index' : ->
 						yOSON.AppCore.runModule 'mapa'
 						yOSON.AppCore.runModule 'galleryChanges'
+						yOSON.AppCore.runModule 'someDatatables'
 					'byDefault': ->
 				allActions: ->
 			byDefault : ->

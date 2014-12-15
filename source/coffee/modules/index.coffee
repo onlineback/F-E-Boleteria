@@ -495,15 +495,22 @@ yOSON.AppCore.addModule "socialManage", ((Sb) ->
 		dom.fbShare.on "click", (e)->
 			e.preventDefault()
 			$this = $(this)
-			atribute = $this.attr "data-activity"
-			if typeof data-activity == undefined
+			attribute = $this.attr "data-activity"
+			if typeof attribute == "undefined"
 				url = $this.parents("article").find(".ver-noticia a").attr "href"
 				title = $this.parents("article").find("h2").html().replace " ","+"
 				description = $this.parents("article").find(".descripcion p").html().replace " ","+"
 				img = $this.parents("article").find("img").attr("src")
 				changeFBMeta(url, title, description, img)
-				completeUrl = "https://www.facebook.com/sharer.php?s=100&p[url]=" + yOSON.baseHost + url + "&p[title]=" + title + "&p[images][0]=" + img + "&p[summary]=" + description
-				window.open(completeUrl, '_blank');
+			if attribute == "details"
+				url = location.href
+				title = $this.parents("article").find("h2").html().replace " ","+"
+				description = $this.parents("article").find(".descripcion p").html().replace " ","+"
+				img = $this.parents("article").find("img").attr("src")
+			if attribute == "home"
+				console.log "home"
+			completeUrl = "https://www.facebook.com/sharer.php?s=100&p[url]=" + yOSON.baseHost + url + "&p[title]=" + title + "&p[images][0]=" + img + "&p[summary]=" + description	
+			window.open(completeUrl, '_blank')
 	changeFBMeta= (u,t,d,i)->
 		$('meta[property="og:url"]').attr("content",u)
 		$('meta[property="og:title"]').attr("content",t)
@@ -515,3 +522,39 @@ yOSON.AppCore.addModule "socialManage", ((Sb) ->
 		catchDom()
 		bindEvents()
 ),["plugins/jqUnderscore.js"]
+#-----------------------------------------------------------------------------------------------
+# @Module: someDatatables
+# @autor: JeanPaulDiaz
+# @Description: Modulo para manejo de datables
+#-----------------------------------------------------------------------------------------------
+yOSON.AppCore.addModule "someDatatables", ((Sb) ->
+	st=
+		"table": ".venue-events"
+	dom= {}
+	mainTable= {}
+	catchDom= ()->
+		dom.table= $(st.table)
+	datatablesBind= ()->
+		mainTable = dom.table.DataTable
+			"lengthChange": false
+			"info": false
+			"aoColumns": [bSortable: false]
+			"searching": false
+			"pagingType": "simple"
+		$("thead").hide();
+		$(".dataTables_wrapper").hide()
+		$(".tabsTables a").on "click", ()->
+			$(".dataTables_wrapper").hide()
+			$this = $(this)
+			$(".tabsTables a.active").removeClass "active"
+			$this.addClass "active"
+			id = $this.attr "data-show"
+			console.log id
+			$(id).parent().show()
+	bindEvents= ()->
+		datatablesBind()
+		$(".tabsTables a.active").click()
+	init: (oParams) ->
+		catchDom()
+		bindEvents()
+),["plugins/jqDatatable.js"]
