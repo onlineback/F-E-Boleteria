@@ -23,7 +23,7 @@ block content
                     .imgSelector.row.lknGallery
                         <?php if(count($this->galeriaVenue)>0){
                         |   foreach ($this->galeriaVenue as $key => $value) { ?>
-                        img(src!="<?php echo DINAMIC_URL ?>/venues/gallery/<?php echo $value['nombre']; ?>", width="66", height="58", data-src="<?php echo DINAMIC_URL ?>/venues/gallery/<?php echo $value['nombre']; ?>")
+                        img(src!="<?php echo DINAMIC_URL ?>/venues/gallery/<?php echo $value['nombre']; ?>", width="66", height="58", data-src!="<?php echo DINAMIC_URL ?>/venues/gallery/<?php echo $value['nombre']; ?>")
                         <?php }} ?>
                     .mapa
                         #mapa
@@ -61,37 +61,20 @@ block content
                             tr
                         tbody
                             tr
-                                td.dates Dec 12, 2014 Friday @ 9:30
+                                <?php if(!empty($this->dataEvento['now'])):?>
+                                <?php foreach($this->dataEvento['now'] AS $value):?>
+                                td.dates <?php echo date('M d, Y N',strtotime($valu['fechaInicioPublicacion'])); ?>@ <?php echo date('H:i',strtotime($value['hora'])); ?>9:30
                                 td.imgTable
-                                    img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", alt="Masterclass", width="71", height="48")
+                                    img(src!="<?php echo DINAMIC_URL ?>/eventos/<?php echo $value['imagenPrincipal']?>", alt!="<?php echo $value['titulo']?>", width="71", height="48")
                                 td.mclass
-                                    h3.txtBlue Masterclass
+                                    h3.txtBlue <?php echo $value['titulo']?>
                                 td.buyTicks
                                     a(href="javascript:;").btn.bgOrange Buy Tickets
-                            tr
-                                td.dates Dec 12, 2014 Friday @ 9:30
-                                td.imgTable
-                                    img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", alt="Masterclass", width="71", height="48")
-                                td.mclass
-                                    h3.txtBlue Masterclass
-                                td.buyTicks
-                                    a(href="javascript:;").btn.bgOrange Buy Tickets
-                            tr
-                                td.dates Dec 12, 2014 Friday @ 9:30
-                                td.imgTable
-                                    img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", alt="Masterclass", width="71", height="48")
-                                td.mclass
-                                    h3.txtBlue Masterclass
-                                td.buyTicks
-                                    a(href="javascript:;").btn.bgOrange Buy Tickets
-                            tr
-                                td.dates Dec 12, 2014 Friday @ 9:30
-                                td.imgTable
-                                    img(src!="<?php echo STATIC_URL ?>/img/img-prueba/portada.jpg", alt="Masterclass", width="71", height="48")
-                                td.mclass
-                                    h3.txtBlue Masterclass
-                                td.buyTicks
-                                    a(href="javascript:;").btn.bgOrange Buy Tickets
+                                <?php endforeach?>    
+                                <?php else:?>
+                                td(colspan="4")
+                                    p No hay eventos disponibles
+                                <?php endif;?>
                             tr
                                 td.dates Dec 12, 2014 Friday @ 9:30
                                 td.imgTable
